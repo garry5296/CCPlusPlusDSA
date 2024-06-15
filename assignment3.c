@@ -224,9 +224,13 @@ int main()
     // 16. Write a program to check whether a given character is an alphabet (uppercase), an alphabet (lower case), a digit or a special character.
     printf("\n\n\e[1mQuestion16. Write a program to check whether a given character is an alphabet (uppercase), \nan alphabet (lower case), a digit or a special character.\e[m");
     char a_16;int b_16;
-    printf("\nEnter a character in upper or lower case:");
+    printf("\nEnter a character in upper or lower case: ");
     scanf(" %c",&a_16);
     b_16=a_16;
+    if(b_16>=48 && b_16<=57)
+    {
+        printf("Solution16: %c is a digit",a_16);
+    };
     if(b_16>=65 && b_16<=90)
     {
         printf("Solution16: %c is an UpperCase alphabet",a_16);
@@ -235,7 +239,7 @@ int main()
     {
         printf("Solution16: %c is an LowerCase alphabet",a_16);
     };
-    if((b_16>=33 && b_16<=64) || (b_16>=91 && b_16<=96) || (b_16>=123 && b_16<=126))
+    if((b_16>=33 && b_16<=47) || (b_16>=58 && b_16<=64) || (b_16>=91 && b_16<=96) || (b_16>=123 && b_16<=126))
     {
         printf("Solution16: %c is a Special Character",a_16);
     };
