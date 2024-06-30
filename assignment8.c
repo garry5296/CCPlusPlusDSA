@@ -178,14 +178,228 @@ int main()
         printf("\n");
     }
 
-    // printf("\n\n\e[1mQuestion:11\e[m\n");
-    // printf("\n\n\e[1mQuestion:12\e[m\n");
-    // printf("\n\n\e[1mQuestion:13\e[m\n");
-    // printf("\n\n\e[1mQuestion:14\e[m\n");
-    // printf("\n\n\e[1mQuestion:15\e[m\n");
-    // printf("\n\n\e[1mQuestion:16\e[m\n");
-    // printf("\n\n\e[1mQuestion:17\e[m\n");
-    // printf("\n\n\e[1mQuestion:18\e[m\n");
-    // printf("\n\n\e[1mQuestion:19\e[m\n");
+    printf("\n\n\e[1mQuestion:11\e[m\n");
+    int aa=64;
+    for(int s=0;s<5;s++)
+    {
+        for(int t=0;t<9;t++)
+        {
+            if(t<=4-s)
+            {
+                printf("  ");
+            }
+            if(t>=4-s && t<4+s+1)
+            {
+                if(t<=4)
+                {
+                    aa++;
+                    printf("%c ",aa);
+                }
+                else{
+                    aa--;
+                    printf("%c ",aa);
+                }
+            }
+        }
+        printf("\n");
+        aa=64;
+    }
+
+    printf("\n\n\e[1mQuestion:12\e[m\n");
+    int aaa=64;
+    for (int u = 0; u < 4; u++)
+    {
+        for (int v = 0; v < 7-u; v++)
+        {
+            if (v<u)
+            {
+                printf(" ");
+            }
+            else{
+                if(v<=3)
+                {
+                    aaa++;
+                    printf("%c",aaa);
+                }
+                else
+                {
+                    aaa--;
+                    printf("%c",aaa);
+                }
+            }
+        }
+        aaa=64;
+        printf("\n");
+    }
+    
+
+    printf("\n\n\e[1mQuestion:13\e[m\n");
+    int ab=64;
+    for(int w=0;w<7;w++)
+    {
+        for(int x=0;x<13;x++)
+        {
+            if(x==6 && w==0)
+            {
+                ab++;
+                printf("%c",ab);
+                ab--;
+            }
+            else if(x>=0 && x<7-w)
+            {
+                ab++;
+                printf("%c",ab);
+            }
+            else if(x>=6+w)
+            {
+                printf("%c",ab);
+                ab--;
+            }
+            else{
+                printf(" ");
+            }
+        };
+        printf("\n");
+        ab=64;
+    }
+
+    printf("\n\n\e[1mQuestion:14\e[m\n");
+    for (int ab = 0; ab < 5; ab++)
+    {
+        for (int bc = 0; bc <= ab; bc++)
+        {
+            if (bc==0 || bc==ab || ab==4)
+            {
+                printf("* ");
+            }
+            else{
+                printf("  ");
+            }
+        }
+        printf("\n");
+        printf("\n");
+    }
+
+    
+
+    printf("\n\n\e[1mQuestion:15\e[m\n");
+    for (int cd = 0; cd < 5; cd++)
+    {
+        for (int de = 0; de < 5; de++)
+        {
+            if (de==4-cd || de==4 || cd==4)
+            {
+                printf("* ");
+            }
+            else{
+                printf("  ");
+            }
+        }
+        printf("\n");
+        printf("\n");
+    }
+
+    printf("\n\n\e[1mQuestion:16\e[m\n");
+    for (int ef = 0; ef < 5; ef++)
+    {
+        for (int fg = 0; fg < 9; fg++)
+        {
+            if (fg==4-ef || ef==4 || fg==4+ef)
+            {
+                printf("* ");
+            }
+            else{
+                printf("  ");
+            }
+        }
+        printf("\n");
+        printf("\n");
+    };
+
+    printf("\n\n\e[1mQuestion:17\e[m\n");
+    for(int gh=0;gh<5;gh++)
+    {
+        for (int hi = 0; hi < 9; hi++)
+        {
+            if(gh==0 || hi==gh|| hi==8-gh)
+            {
+                printf("* ");
+            }
+            else
+            {
+                printf("  ");
+            }
+        }
+        printf("\n");
+        printf("\n");
+    }
+
+    printf("\n\n\e[1mQuestion:18\e[m\n");
+    for(int ij=0;ij<5;ij++)
+    {
+        for(int jk=0;jk<9;jk++)
+        {
+            if(jk>=4-ij && jk<=4+ij)
+            {
+                printf("*");
+            }
+            else{
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    for(int kl=0;kl<4;kl++)
+    {
+        for(int lm=0;lm<9;lm++)
+        {
+            if(lm>kl && lm<8-kl)
+            {
+                printf("*");
+            }
+            else{
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+    printf("\n\n\e[1mQuestion:19\e[m\n");
+    int mn=1;
+    for(mn=1;mn<=3;mn++)
+    {
+        for(int no=0;no<19;no++)
+        {
+            if((no>=3-mn&&no<=5+mn)||(no>=13-mn && no<=15+mn))
+            {
+                printf("*");
+            }
+            else{
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    int counter=0;
+    while(mn<=13)
+    {
+        for(int op=0;op<19;op++)
+        {
+            if(op==6 && mn==4)
+            {
+                printf("MySirG");
+                op=11;
+            }
+            else if(op>=counter && op<19-counter)
+            {
+                printf("*");
+            }
+            else{
+                printf(" ");
+            }
+        }
+        counter++;mn++;
+        printf("\n");
+    }
     return 0;
 }
