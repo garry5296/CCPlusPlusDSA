@@ -101,12 +101,12 @@ int main()
     int j;
     printf("\nEnter the year: ");
     scanf("%d",&j);
-    if(j%4 == 0)
+    if(j%4)
     {
-        printf("Solution8: The %d is a leap year",j);
+        printf("Solution8: The %d is not a leap year",j);
     }
     else{
-        printf("Solution8: The %d is not a leap year",j);
+        printf("Solution8: The %d is a leap year",j);
     };
 
     // 9. Write a program to find the greatest among three given numbers. Print number once if the greatest number appears two or three times.
