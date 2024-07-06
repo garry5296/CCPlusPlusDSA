@@ -2,30 +2,49 @@
 int main()
 {
     printf("\e[1mQuestion1. Write a program to find the Nth term of the Fibonnaci series.\e[m");
-    long int num1=0,num2=1,tempsum=0;int n;
+    long int num1=0,num2=1,tempsum=0;int i=2,n;
     printf("\nEnter a number:");
     scanf("%d",&n);
-    for (int i = 3; i <= n; i++)
+    if(n==1)
     {
-        tempsum=num1+num2;
-        num1=num2;
-        num2=tempsum;
+        printf("%d(st/th) term of fibonnaci series is %ld",n,num1);
+        i=n;
     }
-    printf("%dth term of fibonnaci series is %ld",n,num2);
+    else
+    {
+        while (i < n)
+        {
+            tempsum=num1+num2;
+            num1=num2;
+            num2=tempsum;
+            i++;
+        }
+        printf("%d(nd/th) term of fibonnaci series is %ld",n,num2);
+    }
+
     
     printf("\n\n\e[1mQuestion2. Write a program to print first N terms of Fibonacci series.\e[m");
-    int seven_num1=0,seven_num2=1,newnum,a;
+    int seven_num1=0,seven_num2=1,newnum,a,j=2;
     printf("\nEnter a number to which you wan to print fibonacci series:");
     scanf("%d",&a);
-    printf("%d ",seven_num1);
-    printf("%d ",seven_num2);
-    for (int j = 0; j < a-2; j++)
+    if(a==1)
     {
-        newnum=seven_num1+seven_num2;
-        seven_num1=seven_num2;
-        seven_num2=newnum;
-        printf("%d ",newnum);
+        printf("%d ",seven_num1);
     }
+    else
+    {
+        printf("%d ",seven_num1);
+        printf("%d ",seven_num2);
+        while(j < a)
+        {
+            newnum=seven_num1+seven_num2;
+            seven_num1=seven_num2;
+            seven_num2=newnum;
+            printf("%d ",newnum);
+            j++;
+        }
+    }
+
 
     printf("\n\n\e[1mQuestion3. Write a program to check whether a given number is there in the Fibonacci series or not.\e[m");
     int seventhreenum1=0,seventhreenum2=1,eventhreenewnum,b;
