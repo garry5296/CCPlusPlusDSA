@@ -6,6 +6,8 @@ int nextPrime();
 void allPrime();
 void betweenPrime();
 void fifi();
+int findSquare();
+int facto();
 int main()
 {
     // printf("\n\n\e[1mQuestion1. Write a function to calculate LCM of two numbers. (TSRS).\e[m");
@@ -54,18 +56,35 @@ int main()
     // betweenPrime(pstart,pend);
 
 
-    printf("\n\n\e[1mQuestion7. Write a function to print first N terms of Fibonacci series (TSRN).\e[m");
-    int k;
-    printf("\nEnter a number:");
-    scanf("%d",&k);
-    fifi(k);
+    // printf("\n\n\e[1mQuestion7. Write a function to print first N terms of Fibonacci series (TSRN).\e[m");
+    // int k;
+    // printf("\nEnter a number:");
+    // scanf("%d",&k);
+    // fifi(k);
 
 
     // printf("\n\n\e[1mQuestion8. Write a function to print PASCAL Triangle. (TSRN).\e[m");
+
+
     // printf("\n\n\e[1mQuestion9. Write a program in C to find the square of any number using the function..\e[m");
-    // printf("\n\n\e[1mQuestion10. Write a program in C to find the sum of the series 1! /1+2!/2+3!/3+4!/4+5!/5 using the function..\e[m");
+    // int sqnum;
+    // printf("\nEnter a number to find it's square:");
+    // scanf("%d",&sqnum);
+    // sqnum = findSquare(sqnum);
+    // printf("The square of number is %d",sqnum);
+
+    printf("\n\n\e[1mQuestion10. Write a program in C to find the sum of the series 1! /1+2!/2+3!/3+4!/4+5!/5 using the function..\e[m");
+    int fcnum=5,factsum=0;
+    while(fcnum>0)
+    {
+        factsum=factsum + facto(fcnum)/fcnum;
+        printf("%d",factsum);
+        fcnum--;
+    }
+    printf("\nThe sum of factorial is %d",factsum);
     return 0;
 }
+// Functions:
 int first(int x,int y)
 {
     int n=1;
@@ -208,4 +227,18 @@ void fifi(int l)
             count++;
         }
     }
+}
+int findSquare(int a)
+{
+    return a*a;
+}
+int facto(int b)
+{
+    int mul=1;
+    while (b>0)
+    {
+        mul=mul*b;
+        b--;
+    }
+    return mul;
 }
