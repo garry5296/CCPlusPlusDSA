@@ -8,76 +8,81 @@ void betweenPrime();
 void fifi();
 int findSquare();
 int facto();
+void pascal();
+int comb();
 int main()
 {
-    printf("\e[1mQuestion1. Write a function to calculate LCM of two numbers. (TSRS).\e[m");
-    int a,b,lcm;
-    printf("\nEnter two numbers:");
-    scanf("%d%d",&a,&b);
-    lcm=first(a,b);
-    printf("lcm is %d",lcm);
+    // printf("\e[1mQuestion1. Write a function to calculate LCM of two numbers. (TSRS).\e[m");
+    // int a,b,lcm;
+    // printf("\nEnter two numbers:");
+    // scanf("%d%d",&a,&b);
+    // lcm=first(a,b);
+    // printf("lcm is %d",lcm);
 
-    printf("\n\n\e[1mQuestion2. Write a function to calculate HCF of two numbers. (TSRS).\e[m");
-    int c,d,hcf;
-    printf("\nEnter two numbers:");
-    scanf("%d%d",&c,&d);
-    hcf=second(c,d);
-    printf("HCF is %d",hcf);
+    // printf("\n\n\e[1mQuestion2. Write a function to calculate HCF of two numbers. (TSRS).\e[m");
+    // int c,d,hcf;
+    // printf("\nEnter two numbers:");
+    // scanf("%d%d",&c,&d);
+    // hcf=second(c,d);
+    // printf("HCF is %d",hcf);
 
-    printf("\n\n\e[1mQuestion3. Write a function to check whether a given number is Prime or not. (TSRS).\e[m");
-    int e,f;
-    printf("\nEnter a number:");
-    scanf("%d",&e);
-    f=checkPrime(e);
-    if(f==1)
-        printf("Number is not prime");
-    else
-        printf("Number is prime");
+    // printf("\n\n\e[1mQuestion3. Write a function to check whether a given number is Prime or not. (TSRS).\e[m");
+    // int e,f;
+    // printf("\nEnter a number:");
+    // scanf("%d",&e);
+    // f=checkPrime(e);
+    // if(f==1)
+    //     printf("Number is not prime");
+    // else
+    //     printf("Number is prime");
 
-    printf("\n\n\e[1mQuestion4. Write a function to find the next prime number of a given number. (TSRS).\e[m");
-    int g;
-    printf("\nEnter a number:");
-    scanf("%d",&g);
-    g=nextPrime(g);
-    printf("Next Prime number is %d",g);
+    // printf("\n\n\e[1mQuestion4. Write a function to find the next prime number of a given number. (TSRS).\e[m");
+    // int g;
+    // printf("\nEnter a number:");
+    // scanf("%d",&g);
+    // g=nextPrime(g);
+    // printf("Next Prime number is %d",g);
 
-    printf("\n\n\e[1mQuestion5. Write a function to print first N prime numbers (TSRN).\e[m");
-    int h;
-    printf("\nEnter a number:");
-    scanf("%d",&h);
-    allPrime(h);
+    // printf("\n\n\e[1mQuestion5. Write a function to print first N prime numbers (TSRN).\e[m");
+    // int h;
+    // printf("\nEnter a number:");
+    // scanf("%d",&h);
+    // allPrime(h);
 
-    printf("\n\n\e[1mQuestion6. Write a function to print all Prime numbers between two given numbers. (TSRN).\e[m");
-    int pstart,pend;
-    printf("\nEnter start and end position:");
-    scanf("%d%d",&pstart,&pend);
-    betweenPrime(pstart,pend);
+    // printf("\n\n\e[1mQuestion6. Write a function to print all Prime numbers between two given numbers. (TSRN).\e[m");
+    // int pstart,pend;
+    // printf("\nEnter start and end position:");
+    // scanf("%d%d",&pstart,&pend);
+    // betweenPrime(pstart,pend);
 
-    printf("\n\n\e[1mQuestion7. Write a function to print first N terms of Fibonacci series (TSRN).\e[m");
-    int k;
-    printf("\nEnter a number:");
-    scanf("%d",&k);
-    fifi(k);
-
-
-    // printf("\n\n\e[1mQuestion8. Write a function to print PASCAL Triangle. (TSRN).\e[m");
+    // printf("\n\n\e[1mQuestion7. Write a function to print first N terms of Fibonacci series (TSRN).\e[m");
+    // int k;
+    // printf("\nEnter a number:");
+    // scanf("%d",&k);
+    // fifi(k);
 
 
-    printf("\n\n\e[1mQuestion9. Write a program in C to find the square of any number using the function..\e[m");
-    int sqnum;
-    printf("\nEnter a number to find it's square:");
-    scanf("%d",&sqnum);
-    sqnum = findSquare(sqnum);
-    printf("The square of number is %d",sqnum);
+    printf("\n\n\e[1mQuestion8. Write a function to print PASCAL Triangle. (TSRN).\e[m");
+    int height;
+    printf("\nEnter height and length of triangle you want:");
+    scanf("%d",&height);
+    pascal(height);
 
-    printf("\n\n\e[1mQuestion10. Write a program in C to find the sum of the series 1! /1+2!/2+3!/3+4!/4+5!/5 using the function..\e[m");
-    int fcnum=5,factsum=0;
-    while(fcnum>0)
-    {
-        factsum += facto(fcnum)/fcnum;
-        fcnum--;
-    }
-    printf("\nThe sum of factorial is %d",factsum);
+    // printf("\n\n\e[1mQuestion9. Write a program in C to find the square of any number using the function..\e[m");
+    // int sqnum;
+    // printf("\nEnter a number to find it's square:");
+    // scanf("%d",&sqnum);
+    // sqnum = findSquare(sqnum);
+    // printf("The square of number is %d",sqnum);
+
+    // printf("\n\n\e[1mQuestion10. Write a program in C to find the sum of the series 1! /1+2!/2+3!/3+4!/4+5!/5 using the function..\e[m");
+    // int fcnum=5,factsum=0;
+    // while(fcnum>0)
+    // {
+    //     factsum += facto(fcnum)/fcnum;
+    //     fcnum--;
+    // }
+    // printf("\nThe sum of factorial is %d",factsum);
     return 0;
 }
 // Functions:
@@ -231,10 +236,24 @@ int findSquare(int a)
 int facto(int b)
 {
     int mul=1;
-    while (b>0)
+    for(int i=b;i>0;i--)
     {
-        mul=mul*b;
-        b--;
+        mul*=i;
     }
     return mul;
+}
+int comb(int a,int b)
+{
+    return facto(a)/(facto(b)*facto(a-b));
+}
+void pascal(int a){
+    for(int i=0;i<a;i++){
+        for(int k=0;k<a-i;k++){
+            printf(" ");
+        }
+        for(int j=0;j<=i;j++){
+            printf("%d ",comb(i,j));
+        }
+        printf("\n");
+    }
 }

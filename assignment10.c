@@ -7,7 +7,7 @@ void oddNatural();
 int facto();
 int checkDigit();
 void generatePrimeFactor();
-float comb();
+int comb();
 int permu();
 int main()
 {
@@ -56,7 +56,7 @@ int main()
     int b7,a7;
     printf("\nEnter the number and it's selection:");
     scanf("%d%d",&b7,&a7);
-    printf("THe number of combinations are %f",comb(b7,a7));
+    printf("THe number of combinations are %d",comb(b7,a7));
 
     printf("\n\n\e[1mQuestion8. Write a function to calculate the number of arrangements one can make from n items and r selected at a time. (TSRS).\e[m");
     int a21,b21;
@@ -154,7 +154,7 @@ void generatePrimeFactor(int n)
             i++;
     }
 }
-float comb(int a,int b)
+int comb(int a,int b)
 {
     return facto(a)/(facto(b)*facto(a-b));
 }
