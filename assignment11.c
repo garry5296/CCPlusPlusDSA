@@ -24,7 +24,6 @@ int main()
     hcf=second(c,d);
     printf("HCF is %d",hcf);
 
-
     printf("\n\n\e[1mQuestion3. Write a function to check whether a given number is Prime or not. (TSRS).\e[m");
     int e,f;
     printf("\nEnter a number:");
@@ -48,13 +47,11 @@ int main()
     scanf("%d",&h);
     allPrime(h);
 
-
     printf("\n\n\e[1mQuestion6. Write a function to print all Prime numbers between two given numbers. (TSRN).\e[m");
     int pstart,pend;
     printf("\nEnter start and end position:");
     scanf("%d%d",&pstart,&pend);
     betweenPrime(pstart,pend);
-
 
     printf("\n\n\e[1mQuestion7. Write a function to print first N terms of Fibonacci series (TSRN).\e[m");
     int k;
