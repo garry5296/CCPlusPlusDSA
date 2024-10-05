@@ -12,7 +12,7 @@ void decToOct(int);
 void rev(int);
 int main()
 {
-    printf("\n\n\e[1mQuestion1. Write a recursive function to print first N natural numbers.\e[m");
+    printf("\e[1mQuestion1. Write a recursive function to print first N natural numbers.\e[m");
     int a;
     printf("\nEnter a number:");
     scanf("%d",&a);
@@ -50,10 +50,10 @@ int main()
     printRevEven(d);
     
     printf("\n\n\e[1mQuestion7. Write a recursive function to print squares of first N natural numbers.\e[m");
-    int g;
+    int k;
     printf("\nEnter a number:");
-    scanf("%d",&g);
-    printSq(g);
+    scanf("%d",&k);
+    printSq(k);
     
     printf("\n\n\e[1mQuestion8. Write a recursive function to print binary of a given decimal number.\e[m");
     int h;
@@ -143,10 +143,10 @@ void decToBin(int n)
 }
 void decToOct(int n)
 {
-    if(n>7)
+    if(n>0)
     {
-        decToBin(n/8);
-        printf("%d",n/8);
+        decToOct(n/8);
+        printf("%d",n%8);
     }
 }
 void rev(int n)
