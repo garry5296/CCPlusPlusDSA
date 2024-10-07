@@ -1,3 +1,4 @@
+//Question 7,8,10 are not solved.
 #include<stdio.h>
 int sumNatural(int);
 int sumOdd(int);
