@@ -21,9 +21,38 @@ int main()
     // avg=sum/count;
     // printf("Average of numbers entered by user is %d",avg);
 
-    printf("\n\n\e[1mQuestion3. Write a program to calculate the sum of all even numbers and sum of all odd numbers, which are stored in an array of size 10. Take array values from the user..\e[m");
+    // printf("\n\n\e[1mQuestion3. Write a program to calculate the sum of all even numbers and sum of all odd numbers, which are stored in an array of size 10. Take array values from the user..\e[m");
+    // int d[10],sumEven=0,sumOdd=0;
+    // input(d,10);
+    // for(int i=0;i<=9;i++)
+    // {
+    //     if(d[i]&1)
+    //         sumOdd+=d[i];
+    //     else
+    //         sumEven+=d[i];
+    // }
+    // printf("Sum of all even items is %d\nSum of all odd items is %d",sumEven,sumOdd);
+
     // printf("\n\n\e[1mQuestion4. Write a program to find the greatest number stored in an array of size 10. Take array values from the user..\e[m");
-    // printf("\n\n\e[1mQuestion5. Write a program to find the smallest number stored in an array of size 10. Take array values from the user..\e[m");
+    // int e[10],greatest=0;
+    // input(e,10);
+    // greatest=e[0];
+    // for(int i=0;i<=9;i++)
+    // {
+    //     if(e[i]>greatest)
+    //         greatest=e[i];
+    // }
+    // printf("Greatest item in the array is %d",greatest);
+
+    printf("\n\n\e[1mQuestion5. Write a program to find the smallest number stored in an array of size 10. Take array values from the user..\e[m");
+    int g[10],smallest;
+    input(g,10);
+    smallest=g[0];
+    for (int i = 0; i <= 9; i++)
+        if(g[i]<smallest)
+            smallest=g[i];
+    printf("The smallest number in the array is %d",smallest);
+    
     // printf("\n\n\e[1mQuestion6. Write a program to sort elements of an array of size 10. Take array values from the user..\e[m");
     // printf("\n\n\e[1mQuestion7. Write a program to find second largest in an array.Take array values from the user..\e[m");
     // printf("\n\n\e[1mQuestion8. Write a program to find the second smallest number in an array.Take array values from the user..\e[m");
