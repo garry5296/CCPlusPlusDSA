@@ -44,20 +44,36 @@ int main()
     // }
     // printf("Greatest item in the array is %d",greatest);
 
-    printf("\n\n\e[1mQuestion5. Write a program to find the smallest number stored in an array of size 10. Take array values from the user..\e[m");
-    int g[10],smallest;
-    input(g,10);
-    smallest=g[0];
-    for (int i = 0; i <= 9; i++)
-        if(g[i]<smallest)
-            smallest=g[i];
-    printf("The smallest number in the array is %d",smallest);
+    // printf("\n\n\e[1mQuestion5. Write a program to find the smallest number stored in an array of size 10. Take array values from the user..\e[m");
+    // int g[10],smallest;
+    // input(g,10);
+    // smallest=g[0];
+    // for (int i = 0; i <= 9; i++)
+    //     if(g[i]<smallest)
+    //         smallest=g[i];
+    // printf("The smallest number in the array is %d",smallest);
     
-    // printf("\n\n\e[1mQuestion6. Write a program to sort elements of an array of size 10. Take array values from the user..\e[m");
+    printf("\n\n\e[1mQuestion6. Write a program to sort elements of an array of size 10. Take array values from the user..\e[m");
+    int h[10],compare;
+    input(h,10);
+    compare=h[0];
+    for(int i=0;i<=9;i++)
+        if(h[i]>h[i+1])
+        {
+            h[i]=h[i]+h[i+1];
+            h[i+1]=h[i]-h[i+1];
+            h[i]=h[i]-h[i+1];
+        }
+    for(int i=0;i<=9;i++)
+        printf("%d ",h[i]);
+
     // printf("\n\n\e[1mQuestion7. Write a program to find second largest in an array.Take array values from the user..\e[m");
     // printf("\n\n\e[1mQuestion8. Write a program to find the second smallest number in an array.Take array values from the user..\e[m");
     // printf("\n\n\e[1mQuestion9. Write a program in C to read n number of values in an array and display it in reverse order. Take array values from the user..\e[m");
+
     // printf("\n\n\e[1mQuestion10. Write a program in C to copy the elements of one array into another array.Take array values from the user..\e[m");
+    // int j[]={};
+    // printf("Size of array is %lu\n\n", sizeof(j));
 
     return 0;
 }
