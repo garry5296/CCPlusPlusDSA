@@ -6,6 +6,7 @@ int smallest(int[],int);
 int rotation(int[],int,int,char);
 int adjacentDuplicate(int[],int);
 void reverse(int[],int);
+void duplicate(int[],int);
 int main()
 {
     // printf("\n\n\e[1mQuestion1. Write a function to find the greatest number from the given array of any size. (TSRS).\e[m");
@@ -66,6 +67,13 @@ int main()
     // reverse(new6,n6);
 
     printf("\n\n\e[1mQuestion7. Write a function in C to count a total number of duplicate elements in an array..\e[m");
+    int n7;
+    printf("\nEnter the size of array:");
+    scanf("%d",&n7);
+    int new7[n7];
+    input(new7,n7);
+    duplicate(new7,n7);
+
     // printf("\n\n\e[1mQuestion8. Write a function in C to print all unique elements in an array..\e[m");
     // printf("\n\n\e[1mQuestion9. Write a function in C to merge two arrays of the same size sorted in descending order..\e[m");
     // printf("\n\n\e[1mQuestion10. Write a function in C to count the frequency of each element of an array..\e[m");
@@ -177,4 +185,16 @@ void reverse(int n[],int m)
     {
         printf("%d ",n[i]);
     }
+}
+void duplicate(int n[], int m)
+{
+    int count=0;
+    for(int i=0;i<m-1;i++)
+        for(int j=i+1;j<m;j++)
+            if (n[i]==n[j])
+            {
+                count++;
+            }
+    printf("%d",count);
+            
 }
