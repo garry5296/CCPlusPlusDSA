@@ -195,6 +195,5 @@ void duplicate(int n[], int m)
             {
                 count++;
             }
-    printf("%d",count);
-            
+    printf("%d",count);    
 }
