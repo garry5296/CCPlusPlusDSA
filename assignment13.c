@@ -2,6 +2,7 @@
 #include<stdio.h>
 int sumNatural(int);
 int sumOdd(int);
+int sumEven(int);
 int sumSquare(int);
 int sumDigit(int);
 int fact(int);
@@ -21,11 +22,11 @@ int main()
     scanf("%d",&b);
     printf("%d",sumOdd(b));
 
-    printf("\n\n\e[1mQuestion3. Write a recursive function to calculate sum of first N odd natural numbers.\e[m");
+    printf("\n\n\e[1mQuestion3. Write a recursive function to calculate sum of first N even natural numbers.\e[m");
     int c;
     printf("\nEnter a number:");
     scanf("%d",&c);
-    printf("%d",sumOdd(c));
+    printf("%d",sumEven(c));
 
     printf("\n\n\e[1mQuestion4. Write a recursive function to calculate sum of squares of first n natural numbers.\e[m");
     int e;
@@ -46,10 +47,10 @@ int main()
     printf("%d",fact(h));
 
     printf("\n\n\e[1mQuestion7. Write a recursive function to calculate HCF of two numbers.\e[m");
-    // int i;
-    // printf("\nEnter a number:");
-    // scanf("%d",&i);
-    // printf("%d",fact(i));
+    int i;
+    printf("\nEnter a number:");
+    scanf("%d",&i);
+    printf("%d",fact(i));
 
 
     printf("\n\n\e[1mQuestion8. Write a recursive function to print first N terms of Fibonacci series.\e[m");
@@ -85,6 +86,12 @@ int sumOdd(int n)
     if(n==0)
         return 0;
     return (2*n-1)+sumOdd(n-1);
+}
+int sumEven(int n)
+{
+    if(n==0)
+        return 0;
+    return (2*n)+sumOdd(n-1);
 }
 int sumSquare(int n)
 {
