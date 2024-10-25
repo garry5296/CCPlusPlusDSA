@@ -47,10 +47,10 @@ int main()
     printf("%d",fact(h));
 
     printf("\n\n\e[1mQuestion7. Write a recursive function to calculate HCF of two numbers.\e[m");
-    int i;
-    printf("\nEnter a number:");
-    scanf("%d",&i);
-    printf("%d",fact(i));
+    int i,k;
+    printf("\nEnter two numbers:");
+    scanf("%d%d",&i,&k);
+    // printf("%d",hcf(i));
 
 
     printf("\n\n\e[1mQuestion8. Write a recursive function to print first N terms of Fibonacci series.\e[m");
@@ -91,7 +91,7 @@ int sumEven(int n)
 {
     if(n==0)
         return 0;
-    return (2*n)+sumOdd(n-1);
+    return (2*n)+sumEven(n-1);
 }
 int sumSquare(int n)
 {
