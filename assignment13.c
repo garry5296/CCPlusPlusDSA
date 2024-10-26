@@ -6,8 +6,10 @@ int sumEven(int);
 int sumSquare(int);
 int sumDigit(int);
 int fact(int);
+void hcf(int,int);
 int countDigit(int);
 int fibbo(int);
+int power(int,int);
 int main()
 {
     int a;
@@ -50,14 +52,17 @@ int main()
     int i,k;
     printf("\nEnter two numbers:");
     scanf("%d%d",&i,&k);
-    // printf("%d",hcf(i));
-
+    if(i>k)
+        hcf(i,k);
+    else
+        hcf(k,i);
 
     printf("\n\n\e[1mQuestion8. Write a recursive function to print first N terms of Fibonacci series.\e[m");
-    // int m;
-    // printf("\nEnter a number:");
-    // scanf("%d",&m);
-    // fibbo(m);
+    int m;
+    printf("\nEnter a number:");
+    scanf("%d",&m);
+    for(int x=0;x<m;x++)
+        printf("%d ",fibbo(x));
 
 
     printf("\n\n\e[1mQuestion9. Write a program in C to count the digits of a given number using recursion..\e[m");
@@ -68,10 +73,10 @@ int main()
 
 
     printf("\n\n\e[1mQuestion10. Write a program in C to calculate the power of any number using recursion..\e[m");
-    // int m;
-    // printf("\nEnter a number:");
-    // scanf("%d",&m);
-    // printf("%d",countDigit(m));
+    int y,z;
+    printf("\nEnter a base and exponent:");
+    scanf("%d%d",&y,&z);
+    printf("%d",power(y,z));
 
     return 0;
 }
@@ -119,7 +124,20 @@ int countDigit(int n)
 }
 int fibbo(int n)
 {
-    if(n==0)
-        return 0;
-    printf("%d ",n+fibbo(n-1));
+    if(n==0 || n==1)
+        return n;
+    return fibbo(n-2)+fibbo(n-1);
+}
+void hcf(int n, int m)
+{
+    if((n%m) == 0)
+        printf("%d",m);
+    else
+        hcf(m,(n%m));    
+}
+int power(int b, int e) {
+    if (e == 0)
+        return 1;
+    else
+        return b * power(b, e - 1);
 }
