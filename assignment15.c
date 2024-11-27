@@ -1,12 +1,14 @@
 #include<stdio.h>
 void input(int[],int);
 int sort(int[],int);
+void desc(int[],int);
 int largest(int[],int);
 int smallest(int[],int);
 int rotation(int[],int,int,char);
 int adjacentDuplicate(int[],int);
 void reverse(int[],int);
 void duplicate(int[],int);
+void merging(int[],int[],int,int[]);
 int main()
 {
     // printf("\n\n\e[1mQuestion1. Write a function to find the greatest number from the given array of any size. (TSRS).\e[m");
@@ -21,9 +23,9 @@ int main()
     // int m;
     // printf("\nEnter size of array:");
     // scanf("%d",&m);
-    // int a[m];
-    // input(a,m);
-    // printf("Smallest number in array is: %d",smallest(a,m));
+    // int z[m];
+    // input(z,m);
+    // printf("Smallest number in array is: %d",smallest(z,m));
 
     // printf("\n\n\e[1mQuestion3. Write a function to sort an array of any size. (TSRS).\e[m");
     // int t;
@@ -43,7 +45,7 @@ int main()
     // scanf("%d",&count);
     // int a[count];
     // input(a,count);
-    // printf("Enter by how many positions 'p' and direction 'd' you want to rotate your array:");
+    // printf("Enter by how many positions(for eg: 1,2,3..) and direction(for eg: left/right) you want to rotate your array:");
     // scanf("%d %c",&numb,&direc);
     // a[count] = rotation(a,count,numb,direc);
     // for(int i=0;i<count;i++)
@@ -66,19 +68,47 @@ int main()
     // input(new6,n6);
     // reverse(new6,n6);
 
-    printf("\n\n\e[1mQuestion7. Write a function in C to count a total number of duplicate elements in an array..\e[m");
-    int n7;
-    printf("\nEnter the size of array:");
-    scanf("%d",&n7);
-    int new7[n7];
-    input(new7,n7);
-    duplicate(new7,n7);
+    // printf("\n\n\e[1mQuestion7. Write a function in C to count a total number of duplicate elements in an array..\e[m");
+    // int n7;
+    // printf("\nEnter the size of array:");
+    // scanf("%d",&n7);
+    // int new7[n7];
+    // input(new7,n7);
+    // duplicate(new7,n7);
 
     // printf("\n\n\e[1mQuestion8. Write a function in C to print all unique elements in an array..\e[m");
-    // printf("\n\n\e[1mQuestion9. Write a function in C to merge two arrays of the same size sorted in descending order..\e[m");
-    // printf("\n\n\e[1mQuestion10. Write a function in C to count the frequency of each element of an array..\e[m");
+
+    printf("\n\n\e[1mQuestion9. Write a function in C to merge two arrays of the same size sorted in descending order..\e[m");
+    int n8,total;
+    printf("\nEnter the size of array:");
+    scanf("%d",&n8);
+    total=n8*2;
+    int new8One[n8],new8Two[n8],new8Three[total];
+    input(new8One,n8);
+    input(new8Two,n8);
+    desc(new8One,n8);
+    desc(new8Two,n8);
+    merging(new8One,new8Two,n8,new8Three);
+
+
+    // // printf("\n\n\e[1mQuestion10. Write a function in C to count the frequency of each element of an array..\e[m");
 
     return 0;
+}
+void merging(int a[],int b[],int n,int c[])
+{
+    int count=n*2;
+    printf("count: %d,n:%d\n\n",count,n);
+    for(int i=0;i<n;i++)
+    {
+        c[i]=a[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        c[i+n]=b[i];
+    }
+    for(int i=0;i<count;i++)
+        printf("%d ",c[i]);
 }
 void input(int b[],int n)
 {
@@ -106,6 +136,25 @@ int sort(int b[],int n)
     }
     // for(int i=0;i<n;i++)
     return b[n];
+}
+void desc(int b[],int n)
+{
+    char tag='f';
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n-i;j++)
+        {
+            if(b[j]<b[j+1])
+            {
+                tag = 't';
+                b[j]=b[j]+b[j+1];
+                b[j+1]=b[j]-b[j+1];
+                b[j]=b[j]-b[j+1];
+            }
+        }
+        if(tag=='f')
+            break;
+    }
 }
 int largest(int b[],int n)
 {

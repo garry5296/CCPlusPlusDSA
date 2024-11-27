@@ -1,6 +1,6 @@
 #include<stdio.h>
 void input(int[], int);
-void sort(int[]);
+void sort(int[],int);
 int main()
 {
     printf("\e[1mQuestion1. Write a program to calculate the sum of numbers stored in an array of size 10. Take array values from the user..\e[m");
@@ -62,11 +62,14 @@ int main()
         printf("%d ",h[i]);
 
     printf("\n\n\e[1mQuestion7. Write a program to find second largest in an array.Take array values from the user..\e[m");
-    int l[10];
-    input(l,10);
-    sort(l);
-    int largest=l[9];
-    for(int i=8;i>=0;i--)
+    int arSize;
+    printf("\nEnter size of the array:");
+    scanf("%d",&arSize);
+    int l[arSize];
+    input(l,arSize);
+    sort(l,arSize);
+    int largest=l[arSize-1];
+    for(int i=arSize-2;i>=0;i--)
         if(l[i]<largest)
         {
             printf("Second largest item in the array is: %d",l[i]);
@@ -74,11 +77,14 @@ int main()
         }
 
     printf("\n\n\e[1mQuestion8. Write a program to find the second smallest number in an array.Take array values from the user..\e[m");
-    int x[10];
-    input(x,10);
-    sort(x);
+    int arSizeEight;
+    printf("\nEnter size of the array:");
+    scanf("%d",&arSizeEight);
+    int x[arSizeEight];
+    input(x,arSizeEight);
+    sort(x,arSizeEight);
     int smallest=x[0];
-    for(int i=1;i<=9;i++)
+    for(int i=1;i<arSizeEight;i++)
         if(x[i]>smallest)
         {
             printf("Second smallest item in the array is: %d",x[i]);
@@ -112,15 +118,17 @@ void input(int b[],int x)
 {
     printf("\nEnter %d numbers:",x);
     for(int i=0;i<x;i++)
+    {
         scanf("%d",&b[i]);
+    }
 }
-void sort(int b[])
+void sort(int b[],int n)
 {
     char tag='f';
-    for(int j=0;j<=9;j++)
+    for(int j=0;j<n;j++)
     {
         tag='f';
-        for(int i=0;i<9-j;i++)
+        for(int i=0;i<n-j-1;i++)
         {
             if(b[i]>b[i+1])
             {
