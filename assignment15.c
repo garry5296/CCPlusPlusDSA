@@ -101,7 +101,6 @@ int main()
         }
     }
 
-
     printf("\n\n\e[1mQuestion9. Write a function in C to merge two arrays of the same size sorted in descending order..\e[m");
     int n8,total;
     printf("\nEnter the size of array:");
