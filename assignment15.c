@@ -14,34 +14,34 @@ void unique(int[],int);
 void hashing(int[],int,int[]);
 int main()
 {
-    printf("\n\n\e[1mQuestion1. Write a function to find the greatest number from the given array of any size. (TSRS).\e[m");
-    int n;
-    printf("\nEnter size of array:");
-    scanf("%d",&n);
-    int a[n];
-    input(a,n);
-    printf("Greatest number in array is: %d",largest(a,n));
+    // printf("\n\n\e[1mQuestion1. Write a function to find the greatest number from the given array of any size. (TSRS).\e[m");
+    // int n;
+    // printf("\nEnter size of array:");
+    // scanf("%d",&n);
+    // int a[n];
+    // input(a,n);
+    // printf("Greatest number in array is: %d",largest(a,n));
     
-    printf("\n\n\e[1mQuestion2. Write a function to find the smallest number from the given array of any size. (TSRS).\e[m");
-    int m;
-    printf("\nEnter size of array:");
-    scanf("%d",&m);
-    int z[m];
-    input(z,m);
-    printf("Smallest number in array is: %d",smallest(z,m));
+    // printf("\n\n\e[1mQuestion2. Write a function to find the smallest number from the given array of any size. (TSRS).\e[m");
+    // int m;
+    // printf("\nEnter size of array:");
+    // scanf("%d",&m);
+    // int z[m];
+    // input(z,m);
+    // printf("Smallest number in array is: %d",smallest(z,m));
 
-    printf("\n\n\e[1mQuestion3. Write a function to sort an array of any size. (TSRS).\e[m");
-    int t;
-    printf("\nEnter size of array:");
-    scanf("%d",&t);
-    int p[t];
-    input(p,t);
-    p[t]=sort(p,t);
-    for(int i=0;i<t;i++)
-        printf("%d ",p[i]);
+    // printf("\n\n\e[1mQuestion3. Write a function to sort an array of any size. (TSRS).\e[m");
+    // int t;
+    // printf("\nEnter size of array:");
+    // scanf("%d",&t);
+    // int p[t];
+    // input(p,t);
+    // p[t]=sort(p,t);
+    // for(int i=0;i<t;i++)
+    //     printf("%d ",p[i]);
 
-    printf("\n\n\e[1mQuestion4. Write a function to rotate an array by n position in d direction. \n
-    The d is an indicative value for left or right. (For example, if array of size 5 is [32, 29, 40, 12, 70];\n
+    printf("\n\n\e[1mQuestion4. Write a function to rotate an array by n position in d direction. \
+    The d is an indicative value for left or right. (For example, if array of size 5 is [32, 29, 40, 12, 70];\
      n is 2 and d is left, then the resulting array after left rotation 2 times is [40, 12, 70, 32, 29] ).\e[m");
     int count,numb; char direc;
     printf("\nEnter size of array:");
