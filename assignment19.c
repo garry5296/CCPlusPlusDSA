@@ -44,26 +44,54 @@ int main()
     // for(int i=0;i<5;i++)
     //     printf("%s",c[i]);
     
-    printf("\n\n\e[1mQuestion4. Write a program to search a string in the list of strings..\e[m");
-    char d[5][20]={{"Brazil"},{"Russia"},{"India"},("China"),{"South Africa"}}, dcandidate[20],dflag='f';
-    printf("\nEnter a string to search: ");
-    fgets(dcandidate,20,stdin);
-    dcandidate[strlen(dcandidate)-1]='\0';
-    for(int i=0;i<5;i++)
-        if(strcmp(dcandidate,d[i])==0)
-        {
-            printf("String found!!");
-            dflag='t';
-            break;
-        }
-    if(dflag=='f')
-        printf("String not found!!");
+    // printf("\n\n\e[1mQuestion4. Write a program to search a string in the list of strings..\e[m");
+    // char d[5][20]={{"Brazil"},{"Russia"},{"India"},("China"),{"South Africa"}}, dcandidate[20],dflag='f';
+    // printf("\nEnter a string to search: ");
+    // fgets(dcandidate,20,stdin);
+    // dcandidate[strlen(dcandidate)-1]='\0';
+    // for(int i=0;i<5;i++)
+    //     if(strcmp(dcandidate,d[i])==0)
+    //     {
+    //         printf("String found!!");
+    //         dflag='t';
+    //         break;
+    //     }
+    // if(dflag=='f')
+    //     printf("String not found!!");
+
+    printf("\n\n\e[1mQuestion5. Suppose we have a list of email addresses, check whether all email addresses have ‘@’ in it. Print the odd email out..\e[m");
+    char emailAddresses[10][35] = {
+        "user@example.com",
+        "test.email@gmail.com",
+        "invalid_email",
+        "another.invalid.email",
+        "name@domain",
+        "valid_email@domain.org",
+        "@missingusername.com",
+        "missingatsymbol.com",
+        "invalid@domain@extra.com",
+        "user_with_special@chars!.com"
+    },eflag='f',*p;
+    printf("\n");
+    for(int i=0;i<10;i++)
+    {
+        p=strstr(emailAddresses[i],"@");
+        // for(int j=0;j<35;j++)
+        //     if(emailAddresses[i][j]=='@')
+        //     {
+        //         eflag='t';
+        //         break;
+        //     }
+        // if(eflag='f')
+        //     printf("%s\n",emailAddresses[i]);
+        if(!p)
+            printf("%s\n",emailAddresses[i]);
+    }
 
 
 
 
 
-    // printf("\n\n\e[1mQuestion5. Suppose we have a list of email addresses, check whether all email addresses have ‘@’ in it. Print the odd email out..\e[m");
     // printf("\n\n\e[1mQuestion6. Write a program to print the strings which are palindrome in the list of strings..\e[m");
     // printf("\n\n\e[1mQuestion7. From the list of IP addresses, check whether all ip addresses are valid..\e[m");
     // printf("\n\n\e[1mQuestion8. Given a list of words followed by two words, the task is to find the minimum distance between the given two words in the list of words. (Example : s = {“the”,”quick”,”brown”,”fox”,”quick”} word1 = “the”, word2 = “fox”, OUTPUT : 1 ).\e[m");
