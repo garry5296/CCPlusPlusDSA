@@ -149,8 +149,9 @@ int main()
     //     printf("\033[0;31mError: user not authenticated!!\033[0m\n");
 
     printf("\n\n\e[1mQuestion10. Create an authentication system. It should be menu driven..\e[m");
-    int l,number=0;char lEmail[10][40],luser[10][40],lpass[10][20],lrepass[20],secAns[10][40],secure[40],password[40],username[40],email[40],askLogin;
-    printf("\nWelcome to \e[1mMySirG Education Services\e[m\n\nChoose from below option:\n1. Signup!!\n2. Login\n3. Forgot Password?\n4.Exit");
+    int l,number=0;char lEmail[10][40],luser[10][40],lpass[10][40],lrepass[20],secAns[10][40],secure[40],checkpass[40],password[40],username[40],email[40],askLogin;
+    mainmenu:
+    printf("\nWelcome to \e[1mMySirG Education Services\e[m\n\nChoose from below option:\n1. Signup!!\n2. Login\n3. Forgot Password?\n4. Exit");
     scanf("%d",&l);
     while (getchar() != '\n');
     switch (l)
@@ -171,10 +172,10 @@ int main()
     
     label2:
         printf("\n\e[1mCreate a password:\e[m\n-(atleast 8 character)\n-(atleast 1 digit)\n-(atleast 1 uppercase letter)\n-(atleast 1 lowercase letter)\n-(atleast 1 speacial character)");
-        fgets(lpass[number],20,stdin);
-        if(strlen(lpass[number])>8)
+        fgets(checkpass,40,stdin);
+        if(strlen(checkpass)>8)
         {
-            if(!validPass(lpass[number]))
+            if(!validPass(checkpass))
             {
                 printf("\n\t\tSecurity caution: Not a strong password!!");
                 goto label2;
@@ -187,8 +188,10 @@ int main()
     label3:
         printf("\nRe-enter password: ");
         fgets(lrepass,20,stdin);
-        if(strcmp(lrepass,lpass[number]))
+        if(!strcmp(lrepass,checkpass))
         {
+            strcpy(lpass[number],lrepass);
+        }else{
             printf("Password didn't matched!!");
             goto label3;
         }
@@ -197,20 +200,22 @@ int main()
         fgets(secAns[number],40,stdin);
 
         printf("\n\t\tAccount created successfully!!");
+        number++;
 
-        printf("\nDo you want to login? - Press 'Y/y' for yes and 'N/n' for exit.\n\nOr do you want to create a new account? - enter 'A/a' for new account creation");
+        printf("\nDo you want to login? - Press 'Y/y' to Login.\nPress 'E/e' to exit.\nPress 'm/M' for Main menu.\n");
         scanf("%c",&askLogin);
         while (getchar() != '\n');
 
         if(askLogin == 'Y' || askLogin == 'y')
             goto acctologin;
-        else if (askLogin == 'a' || askLogin == 'A')
-        {
-            goto label1;
-        }
-        number++;
-        
-    
+        else if (askLogin == 'm' || askLogin == 'M')
+            goto mainmenu;
+        else if(askLogin == 'e' || askLogin == 'E')
+            break;
+        else
+            goto askexit;
+
+
     case 2:
         acctologin:
         if(number)
@@ -220,17 +225,14 @@ int main()
         loginlabel:
             printf("\nEnter username: ");
             fgets(username,40,stdin);
-            for(i=0;i<10;i++);
-                if(strcmp(username,luser[i])==0)
+            for(i=0;i<10;i++)
+                if(!strcmp(username,luser[i]))
                 {
                     uflag='t';
-                    printf("\nvalue of i is %d",i);
                     break;
                 }
             if(uflag=='f')
             {
-                printf("\nnoaccountvalue of i is %d %s",i,luser[0]);
-
                 printf("\nno account found with username!!\n\n\t\tRestarting Login...");
                 goto loginlabel;
             }
@@ -243,12 +245,24 @@ int main()
                 printf("\nError: Incorrect password!!\n\nRe-enter password:");
                 goto passlabel;
             }else{
-                printf("\nWelcome %s,",luser[number]);
+                printf("\nWelcome %s",luser[i]);
             }
         }
         else{
-            printf("No user account!!\nPlease create one to login");
+            printf("\e[1mInformation:\e[m No user account!!\nPlease create one to login");
         }
+        
+        askexit:
+        printf("\nPress 'e/E' to Exit\nPress 'm/M' for Main menu?");
+        scanf("%c",&askLogin);
+        while (getchar() != '\n');
+
+        if(askLogin == 'e' || askLogin == 'E')
+            break;
+        else if (askLogin == 'm' || askLogin == 'M')
+            goto mainmenu;
+        else
+            goto askexit;
 
     case 3:
         if(number)
@@ -262,19 +276,19 @@ int main()
                 if(!strcmp(lEmail[j],email))
                 {
                     mflag='t';
-                    printf("Account found!!\n\nHello %s,\n",luser[j]);
+                    printf("Account found!!\n\nHello %s\n",luser[j]);
                     break;
                 }
-            if(mflag='f')
+            if(mflag=='f')
             {
-                printf("\nno account found with username!!\n\n\t\tRestarting Reset...");
+                printf("\nno account found with this email!!\n\nRestarting Reset...\n");
                 goto passreset;
             }
 
         passsecurity:
             printf("\nSecurity question:\nWhat car brand you like the most?\n(case sensitive): ");
             fgets(secure,40,stdin);
-            if(strcmp(secAns[j-1],secure))
+            if(strcmp(secAns[j],secure))
             {
                 printf("\nsecurity answer is incorrect!!\n");
                 goto passsecurity;
@@ -283,16 +297,31 @@ int main()
         passrenter:
             printf("\nChoose a new password\n-(atleast 8 character)\n-(atleast 1 digit)\n-(atleast 1 uppercase letter)\n-(atleast 1 lowercase letter)\n-(atleast 1 speacial character)");
             fgets(password,40,stdin);
-            if(!validPass(password))
+            if(strlen(checkpass)>8)
             {
-                printf("\n\t\tSecurity caution: Not a strong password!!");
-                goto passrenter;
+                if(!validPass(password))
+                {
+                    printf("\n\t\tSecurity caution: Not a strong password!!");
+                    goto passrenter;
+                }else if(validPass(password)){
+                    if(!strcmp(password,lpass[j]))
+                    {
+                        printf("\nThis is your old password, Press 'y/Y' to restore or 'n/N' to create new.");
+                        scanf("%c",&askLogin);
+                        while (getchar() != '\n');
+                        if(askLogin == 'n' || askLogin == 'N')
+                            goto passrenter;
+                        else if (askLogin == 'y' || askLogin == 'Y')
+                            goto reenterpass;
+                    }
+                }
             }
+        reenterpass:
             printf("\nRe-enter password: ");
             fgets(lrepass,40,stdin);
-            if(strcmp(password,lrepass))
+            if(!strcmp(password,lrepass))
             {
-                strcpy(lpass[j-1],lrepass);
+                strcpy(lpass[j],lrepass);
                 printf("\nPassword reset successfull!!");
             }
             else
@@ -304,6 +333,16 @@ int main()
             printf("No user account!!\nPlease create one");
             goto label1;
         }
+        printf("\nPress 'e/E' to Exit\nPress 'm/M' for Main menu?");
+        scanf("%c",&askLogin);
+        while (getchar() != '\n');
+
+        if(askLogin == 'e' || askLogin == 'E')
+            break;
+        else if (askLogin == 'm' || askLogin == 'M')
+            goto mainmenu;
+        else
+            goto askexit;
 
     default:
         break;
@@ -347,7 +386,7 @@ void strSort(char x[])
 int validPass(char x[])
 {
     int l=0,u=0,n=0,s=0;
-    for(int i=0;i<20;i++)
+    for(int i=0;x[i];i++)
     {
         if(x[i]>='a' && x[i]<='z')
             l++;
