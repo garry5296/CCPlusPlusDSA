@@ -30,15 +30,15 @@ int main()
     // input(z,m);
     // printf("Smallest number in array is: %d",smallest(z,m));
 
-    // printf("\n\n\e[1mQuestion3. Write a function to sort an array of any size. (TSRS).\e[m");
-    // int t;
-    // printf("\nEnter size of array:");
-    // scanf("%d",&t);
-    // int p[t];
-    // input(p,t);
-    // p[t]=sort(p,t);
-    // for(int i=0;i<t;i++)
-    //     printf("%d ",p[i]);
+    printf("\n\n\e[1mQuestion3. Write a function to sort an array of any size. (TSRS).\e[m");
+    int t;
+    printf("\nEnter size of array:");
+    scanf("%d",&t);
+    int p[t];
+    input(p,t);
+    p[t]=sort(p,t);
+    for(int i=0;i<t;i++)
+        printf("%d ",p[i]);
 
     printf("\n\n\e[1mQuestion4. Write a function to rotate an array by n position in d direction. \
     The d is an indicative value for left or right. (For example, if array of size 5 is [32, 29, 40, 12, 70];\
