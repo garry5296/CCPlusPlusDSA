@@ -8,95 +8,126 @@ char *strLwr(char*);
 int alphaNumeric(char[]);
 int strPalindrome(char[]);
 int wordCount(char[]);
-// char *strTrim(char*);
-char *strWordWise(char*);
+void strWordWise(char[],int);
 void duplicateChar(char[]);
 int main()
 {
-    // printf("\n\n\e[1mQuestion1. Write a function to calculate length of the string.\e[m");
-    // char a[50];
-    // printf("\nEnter a string under length 50:");
-    // fgets(a,50,stdin);
-    // printf("The length of the string is %d",strLen(a));
+    printf("\n\n\e[1mQuestion1. Write a function to calculate length of the string.\e[m");
+    char a[50];
+    printf("\nEnter a string under length 50:");
+    fgets(a,50,stdin);
+    printf("The length of the string is %d",strLen(a));
 
-    // printf("\n\n\e[1mQuestion2. Write a function to reverse a string..\e[m");
-    // char b[50];
-    // printf("\nEnter a string under length 50:");
-    // fgets(b,50,stdin);
-    // strRev(b);
-    // printf("The reverse of the string is %s",b);
+    printf("\n\n\e[1mQuestion2. Write a function to reverse a string..\e[m");
+    char b[50];
+    printf("\nEnter a string under length 50:");
+    fgets(b,50,stdin);
+    strRev(b);
+    printf("The reverse of the string is %s",b);
 
-    // printf("\n\n\e[1mQuestion3. Write a function to compare two strings..\e[m");
-    // char c[50],d[50];
-    // printf("\nEnter first string: ");
-    // fgets(c,50,stdin);
-    // printf("Enter second string: ");
-    // fgets(d,50,stdin);
-    // if(strComp(c,d))
-    //     printf("Strings are equal!!");
-    // else
-    //     printf("Strings are not equal!!");
+    printf("\n\n\e[1mQuestion3. Write a function to compare two strings..\e[m");
+    char c[50],d[50];
+    printf("\nEnter first string: ");
+    fgets(c,50,stdin);
+    printf("Enter second string: ");
+    fgets(d,50,stdin);
+    if(strComp(c,d))
+        printf("Strings are same!!");
+    else
+        printf("Strings are not same!!");
     
-    // printf("\n\n\e[1mQuestion4. Write a function to transform string into uppercase.\e[m");
-    // char e[50];
-    // printf("\nEnter a string under 50 characters: ");
-    // fgets(e,50,stdin);
-    // printf("The Uppercase of the string is %s",strUpr(e));
+    printf("\n\n\e[1mQuestion4. Write a function to transform string into uppercase.\e[m");
+    char e[50];
+    printf("\nEnter a string under 50 characters: ");
+    fgets(e,50,stdin);
+    printf("The Uppercase of the string is %s",strUpr(e));
 
-    // printf("\n\n\e[1mQuestion5. Write a function to transform a string into lowercase.\e[m");
-    // char f[50];
-    // printf("\nEnter a string under 50 character: ");
-    // fgets(f,50,stdin);
-    // printf("The Lowercase of the string is %s",strLwr(f));
+    printf("\n\n\e[1mQuestion5. Write a function to transform a string into lowercase.\e[m");
+    char f[50];
+    printf("\nEnter a string under 50 character: ");
+    fgets(f,50,stdin);
+    printf("The Lowercase of the string is %s",strLwr(f));
 
-    // printf("\n\n\e[1mQuestion6. Write a function to check whether a given string is an alphanumeric string or not.(Alphanumeric string must contain at least one alphabet and one digit).\e[m");
-    // char g[50];
-    // printf("\nEnter a string under 50 characters: ");
-    // fgets(g,50,stdin);
-    // if(alphaNumeric(g))
-    //     printf("The string is alphanumeric!!");
-    // else
-    //     printf("The string is not alphanumeric!!");
+    printf("\n\n\e[1mQuestion6. Write a function to check whether a given string is an alphanumeric string or not.(Alphanumeric string must contain at least one alphabet and one digit).\e[m");
+    char g[50];
+    printf("\nEnter a string under 50 characters: ");
+    fgets(g,50,stdin);
+    if(alphaNumeric(g))
+        printf("The string is alphanumeric!!");
+    else
+        printf("The string is not alphanumeric!!");
 
 
-    // printf("\n\n\e[1mQuestion7. Write a function to check whether a given string is palindrome or not..\e[m");
-    // char h[50];
-    // printf("\nEnter a string under 50 characters: ");
-    // fgets(h,50,stdin);
-    // if(strPalindrome(h))
-    //     printf("String is a palindrome!!");
-    // else
-    //     printf("String is not a palindrome!!");
+    printf("\n\n\e[1mQuestion7. Write a function to check whether a given string is palindrome or not..\e[m");
+    char h[50];
+    printf("\nEnter a string under 50 characters: ");
+    fgets(h,50,stdin);
+    if(strPalindrome(h))
+        printf("String is a palindrome!!");
+    else
+        printf("String is not a palindrome!!");
 
-    // printf("\n\n\e[1mQuestion8. Write a function to count words in a given string.\e[m");
-    // char k[150];
-    // printf("\nEnter a string:");
-    // fgets(k,150,stdin);
-    // printf("Count of words in the string are: %d",wordCount(k));
+    printf("\n\n\e[1mQuestion8. Write a function to count words in a given string.\e[m");
+    char k[150];
+    printf("\nEnter a string:");
+    fgets(k,150,stdin);
+    printf("Count of words in the string are: %d",wordCount(k));
 
 
     printf("\n\n\e[1mQuestion9. Write a function to reverse a string word wise. (For example if the given string is “Mysirg Education Services” then the resulting string should be “Services Education Mysirg” ).\e[m");
     char l[150];
     printf("\nEnter a string:");
     fgets(l,150,stdin);
-    printf("The resulting string is %s",strWordWise(l));
+    strWordWise(l,strLen(l));
 
-    // printf("\n\n\e[1mQuestion10. Write a function to find the repeated character in a given string..\e[m");
-    // char m[150];
-    // printf("\nEnter a string:");
-    // fgets(m,150,stdin);
-    // duplicateChar(m);
+    printf("\n\n\e[1mQuestion10. Write a function to find the repeated character in a given string..\e[m");
+    char m[150];
+    printf("\nEnter a string:");
+    fgets(m,150,stdin);
+    duplicateChar(m);
 
     return 0;
 }
 //functions
+void strWordWise(char a[], int x)
+{
+    int start=0,end=1,i=0,temp;
+    while(a[i]!='\0')
+    {
+        if(a[i]!=' ' && a[i]!='\n')
+            i++;
+        else
+        {
+            end=i-1;
+            while(start<end)
+            {
+                temp=a[start];
+                a[start]=a[end];
+                a[end]=temp;
+                start++;
+                end--;
+            }
+            if(a[i]=='\n')
+            {
+                break;
+            }
+            start=i+1;
+            i++;
+        }
+    }
+    i--;
+    while(i>=0)
+    {
+        printf("%c",a[i]);
+        i--;
+    }
+}
+
 void duplicateChar(char x[])
 {
     char temp[150]={0};
     for(int i=0;x[i];i++)
         temp[(int)x[i]]++;
-    // strcpy(x,"0");
-    // printf("now x is %d",strLen(x));
     for(int i=32;i<123;i++)
         if(temp[i]>1)
             printf("%c ",i);
@@ -151,6 +182,7 @@ int alphaNumeric(char x[])
 {
     int al=0,nu=0;
     for (int i = 0; x[i]!='\n'; i++)
+    {
         if((x[i]>='A' && x[i<='Z']) || (x[i]>='a' && x[i<='z']))
             al++;
         else if (x[i]>='0' && x[i<='9'])
@@ -159,6 +191,7 @@ int alphaNumeric(char x[])
             return 1;
         else
             return 0;
+    }
 }
 int strPalindrome(char x[])
 {
@@ -176,24 +209,3 @@ int wordCount(char x[])
     }
     return count;
 }
-char *strWordWise(char *x)
-{
-    char a[strLen(x)],temp;int count=0;
-    strcpy(a,strRev(x));
-    printf("%s",a);
-    for(int i=0;a[i];i++)
-        if(a[i]!=' ')
-            count++;
-        else
-            for(int j=0;j<=count;j++)
-            {
-                temp=*(a+j);
-                *(a+j)=*(a+temp-1-j);
-                *(a+temp-1-j)=temp;
-            }
-        count=0;
-    // printf("%s",a);
-    strcpy(x,a);
-    return x;
-}
-
