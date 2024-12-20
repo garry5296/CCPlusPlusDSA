@@ -1,12 +1,13 @@
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 void strSort(char[]);
 void strRev(char[]);
 int facto(int);
 int validPass(char[]);
 int main()
 {
-    printf("\n\n\e[1mQuestion1. Write a program to find the number of vowels in each of the 5 strings stored in two dimensional arrays, taken from the user..\e[m");
+    printf("\n\n\e[1mQuestion1. Write a program to find the number of vowels in each of the 5 strings stored in two dimensional \narrays, taken from the user..\e[m");
     char a[5][100];int count=0;
     printf("\nEnter five strings: ");
     for(int i=0;i<5;i++)
@@ -25,9 +26,12 @@ int main()
     char b[10][50], t[50], flag='f';
     printf("\nEnter 10 city names: ");
     for(int i=0;i<10;i++)
-        gets(b[i]);
+    {
+        fgets(b[i],50,stdin);
+        b[i][strlen(b[i])-1]='\0';
+    }
     for(int i=0;i<10;i++)
-        for(int j=0;j<10-1;j++)
+        for(int j=0;j<10-1-i;j++)
             if(strcmp(b[j],b[j+1])>0)
             {
                 strcpy(t,b[j]);
@@ -49,7 +53,7 @@ int main()
     
     printf("\n\n\e[1mQuestion4. Write a program to search a string in the list of strings..\e[m");
     char d[5][20]={"Brazil","Russia","India","China","South Africa"}, dcandidate[20],dflag='f';
-    printf("\nEnter a string to search: ");
+    printf("\nEnter a string to search in this {\"Brazil\",\"Russia\",\"India\",\"China\",\"South Africa\"}: ");
     fgets(dcandidate,20,stdin);
     dcandidate[strlen(dcandidate)-1]='\0';
     for(int i=0;i<5;i++)
@@ -62,7 +66,7 @@ int main()
     if(dflag=='f')
         printf("String not found!!");
 
-    printf("\n\n\e[1mQuestion5. Suppose we have a list of email addresses, check whether all email addresses have ‘@’ in it. Print the odd email out..\e[m");
+    printf("\n\n\e[1mQuestion5. Suppose we have a list of email addresses, check whether all email addresses \nhave ‘@’ in it. Print the odd email out..\e[m");
     char emailAddresses[10][35] = {
         "user@example.com",
         "test.email@gmail.com",
@@ -93,9 +97,8 @@ int main()
             printf("%s\n",words[i]);
     }
 
-    //not working//
     printf("\n\n\e[1mQuestion7. From the list of IP addresses, check whether all ip addresses are valid..\e[m");
-    char ipAddresses[10][20] = {
+    char ipAddresses[11][20] = {
         "192.168.1.1",
         "255.255.255.255",
         "0.0.0.0",
@@ -103,22 +106,56 @@ int main()
         "300.168.1.1",
         "192.168.1",
         "192.168.1.256",
+        "234.45.23",
         "192.168..1",
         "192.168.1.-1",
         "192.168.1.1.1"
     };
-    printf("\n");
-    for(int i=0;i<10;i++)
+    int i=0;
+    while(i<11)
     {
-        if(strcmp("255.255.255.255",ipAddresses[i])>=0)
-            printf("%s is valid!!\n",ipAddresses[i]);
+        int j=0;
+        char *a=strtok(ipAddresses[i],".");
+        while(a!=NULL)
+        {
+            int x=atoi(a);
+            if((x>=0) && (x<=255))
+                j++;
+            printf("%d ",x);
+            a=strtok(NULL,".");
+        }
+        if(j==4)
+            printf("is a \033[0;32mvalid\033[0m ip address\n");
         else
-            printf("%s is not valid!!\n",ipAddresses[i]);
+            printf("is an \033[0;31minvalid\033[0m ip address\n");
+        i++;
     }
 
-    printf("\n\n\e[1mQuestion8. Given a list of words followed by two words, the task is to find the minimum distance between the given two words in the list of words. (Example : s = {“the”,”quick”,”brown”,”fox”,”quick”} word1 = “the”, word2 = “fox”, OUTPUT : 1 ).\e[m");
-    
-    printf("\n\n\e[1mQuestion9. Write a program that asks the user to enter a username. If the username entered is one of the names in the list then the user is allowed to calculate the factorial of a number. Otherwise, an error message is displayed.\e[m");
+    printf("\n\n\e[1mQuestion8. Given a list of words followed by two words, the task is to find \nthe minimum distance between the given two words in the list of words. \n(Example : s = {“the”,”quick”,”brown”,”fox”,”quick”} word1 = “the”, word2 = “fox”, OUTPUT : 1 ).\e[m");
+    char s[7][8] = {"the","brown","quick","brown","fox","quick","the"},ffirst[8],ssecond[8];
+    int i8=0,ss=-1,ff=-1,diff8=7,temp8;
+    printf("\nEnter two words from the list{“the”,”quick”,”brown”,”fox”,”quick”} to know the distance between them: ");
+    fgets(ffirst,8,stdin);
+    ffirst[strlen(ffirst)-1]='\0';
+    fgets(ssecond,8,stdin);
+    ssecond[strlen(ssecond)-1]='\0';
+    while(i8<7)
+    {
+        if(!strcmp(ffirst,s[i8]))
+            ff=i8;
+        else if(!strcmp(ssecond,s[i8]))
+            ss=i8;
+        if(ss>-1 && ff>-1)
+        {
+            temp8 = abs(ss-ff);
+            if(temp8<diff8)
+                diff8=temp8;
+        }
+        i8++;
+    }
+    printf("The distance between two words is %d",diff8-1);
+
+    printf("\n\n\e[1mQuestion9. Write a program that asks the user to enter a username. If the username entered is one of the \nnames in the list then the user is allowed to calculate the factorial of a number. Otherwise, an error message is displayed.\e[m");
     char loggedusers[10][20]={
         "harish.gupta",
         "navalkataria",
@@ -131,7 +168,7 @@ int main()
         "gunjanbansal",
         "partapsingh"
     },input[30],iflag='f';int factnumber=0;
-    printf("\nEnter a username: ");
+    printf("\nEnter a username from this list\nharish.gupta\nnavalkataria\nparmodrana\nsunielshetty\nsammershinde\nkumarverma\nhasinabegam\nrananaidu\ngunjanbansal\npartapsingh\t: ");
     fgets(input,30,stdin);
     input[strlen(input)-1]='\0';
     for(int i=0;i<10;i++)
@@ -390,14 +427,14 @@ int validPass(char x[])
     {
         if(x[i]>='a' && x[i]<='z')
             l++;
-        else if(x[i]>='A' && x[i]<='Z')
+        if(x[i]>='A' && x[i]<='Z')
             u++;
-        else if(x[i]>='0' && x[i]<='9')
+        if(x[i]>='0' && x[i]<='9')
             n++;
-        else if((x[i]>='!' && x[i]<='/') || x[i]=='@')
+        if((x[i]>='!' && x[i]<='/') || x[i]=='@')
             s++;
     }
-    if(l & u & n & s)
+    if(l && u && n && s)
         return 1;
     else
         return 0;

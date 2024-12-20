@@ -8,7 +8,7 @@ char *strLwr(char*);
 int alphaNumeric(char[]);
 int strPalindrome(char[]);
 int wordCount(char[]);
-void strWordWise(char[],int);
+void strWordWise(char[]);
 void duplicateChar(char[]);
 int main()
 {
@@ -73,12 +73,11 @@ int main()
     fgets(k,150,stdin);
     printf("Count of words in the string are: %d",wordCount(k));
 
-
     printf("\n\n\e[1mQuestion9. Write a function to reverse a string word wise. (For example if the given string is “Mysirg Education Services” then the resulting string should be “Services Education Mysirg” ).\e[m");
     char l[150];
     printf("\nEnter a string:");
     fgets(l,150,stdin);
-    strWordWise(l,strLen(l));
+    strWordWise(l);
 
     printf("\n\n\e[1mQuestion10. Write a function to find the repeated character in a given string..\e[m");
     char m[150];
@@ -89,7 +88,7 @@ int main()
     return 0;
 }
 //functions
-void strWordWise(char a[], int x)
+void strWordWise(char a[])
 {
     int start=0,end=1,i=0,temp;
     while(a[i]!='\0')
