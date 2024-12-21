@@ -121,7 +121,7 @@ int main()
         // while (getchar() != '\n');
     }
     for (int i = 0; i < 5; i++)
-        printf("\n%s roll number %d got a total percentage of %.2f%%",M[i].name,M[i].roll_no,percentagee(M[i].chem_marks,M[i].phy_marks,M[i].maths_marks));
+        printf("\n\e[1m%s\e[m roll no. - \e[1m%d\e[m got a total percentage of \e[1m%.2f%%\e[m",M[i].name,M[i].roll_no,percentagee(M[i].chem_marks,M[i].phy_marks,M[i].maths_marks));
 
     return 0;
 }
