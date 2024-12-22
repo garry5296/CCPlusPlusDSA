@@ -68,8 +68,9 @@ int main()
 
     printf("\n\n\e[1mQuestion7. Write a program to calculate the difference between two time periods..\e[m");
     struct Time T1,T2;
-    printf("\nEnter time in the format for hh:mm:ss ");
+    printf("\nEnter start time(use format \e[1mhh:mm:ss\e[m): ");
     scanf("%d:%d:%d",&T1.hr,&T1.min,&T1.sec);
+    printf("Enter stop time(use format \e[1mhh:mm:ss\e[m): ");
     scanf("%d:%d:%d",&T2.hr,&T2.min,&T2.sec);
     if(T2.sec<T1.sec)
     {
