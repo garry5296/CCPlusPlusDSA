@@ -84,19 +84,25 @@ int main()
     printf("Total of all the values including the giving array is %d",eSum);
 
     printf("\n\n\e[1mQuestion6. Write a program in C to find the largest element using Dynamic Memory Allocation..\e[m");
-    int *f1=NULL,*f2=NULL;
+    int fMax,*f1=NULL;
     f1=(int*)malloc(sizeof(int));
-    f2=(int*)malloc(sizeof(int));
-    printf("\nEnter two numbers: ");
-    if(f1!=NULL && f2!=NULL)
+    printf("\nEnter ten numbers: ");
+    if(f1==NULL)
     {
-        scanf("%d%d",f1,f2);
+        printf("\nMemory allocation failed!!");
+        return 0;
+    }else if(f1!=NULL)
+    {
+        for(int x=0;x<10;x++)
+            scanf("%d",f1+x);
     }
-    (*f1>*f2)?printf("%d is greater",*f1):printf("%d is greater",*f2);
+    fMax=*f1;
+    for(int x=0;x<10;x++)
+        if(f1[x]>fMax)
+            fMax=f1[x];
+    printf("%d is largest",fMax);
     free(f1);
-    free(f2);
     f1=NULL;
-    f2=NULL;
 
     printf("\n\n\e[1mQuestion7. Write a program to demonstrate memory leak in C..\e[m");
     int g1;
