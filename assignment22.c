@@ -1,18 +1,21 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<stddef.h>
 struct employee{
     int empId;
     char empName[50];
     float empWeight;
 };
 int input();
+char* inputString();
 int main()
 {
-    // printf("\e[1mQuestion1. Define a function to input variable length string and store it in an array without memory wastage..\e[m");
-    // int p;
-
-
-
+    printf("\e[1mQuestion1. Define a function to input variable length string and store it in an array without memory wastage..\e[m");
+    char *p=NULL;
+    p=inputString();
+    printf("String is %s",p);
+    free(p);
+    p=NULL;
 
     printf("\n\n\e[1mQuestion2. Write a program to ask the user to input a number of data values he would\nlike to enter then create an array dynamically to accommodate the data values. Now take the\ninput from the user and display the average of data values..\e[m");
     int b1,*b2=NULL,bSum=0;float bAvg;
@@ -132,10 +135,12 @@ int main()
     int j1,*j2=NULL,jMin,jMax;
     printf("\nEnter size of array: ");
     scanf("%d",&j1);
-    j2=(int*)malloc(sizeof(int));
+    j2=(int*)malloc((sizeof(int))*j1);
     printf("Enter the %d elements: ",j1);
     for(int i=0;i<j1;i++)
+    {
         scanf("%d",j2+i);
+    }
     jMin=j2[0];
     jMax=j2[0];
     for(int i=0;i<j1;i++)
@@ -149,6 +154,23 @@ int main()
     free(j2);
     j2=NULL;
     return 0;
+}
+//functions
+char* inputString()
+{
+    char *a,c;int i=0,j=1;
+    a=(char*)malloc(sizeof(char));
+    printf("\nEnter any string: ");
+    while(c!='\n')
+    {
+        c=getc(stdin);
+        j++;
+        a=(char*)realloc(a,sizeof(char)*j);
+        a[i]=c;
+        i++;
+    }
+    a[i]='\0';
+    return a;
 }
 int input()
 {
