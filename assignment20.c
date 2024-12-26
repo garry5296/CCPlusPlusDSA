@@ -6,41 +6,41 @@ void sortInt(int*,int);
 int maX(int*,int*);
 int main()
 {
-    // printf("\e[1mQuestion1. Write a function to swap values of two in variables of calling function.\e[m");
-    // int a1,a2;
-    // printf("\nEnter two numbers: ");
-    // scanf("%d%d",&a1,&a2);
-    // while (getchar() != '\n');//fflush(stdin) not working
-    // swap(&a1,&a2);
-    // printf("After swaping, first variable is %d and second is %d now.",a1,a2);
+    printf("\e[1mQuestion1. Write a function to swap values of two in variables of calling function.\e[m");
+    int a1,a2;
+    printf("\nEnter two numbers: ");
+    scanf("%d%d",&a1,&a2);
+    while (getchar() != '\n');//fflush(stdin) not working
+    swap(&a1,&a2);
+    printf("After swaping, first variable is %d and second is %d now.",a1,a2);
 
-    // printf("\n\n\e[1mQuestion2. Write a function to swap strings of two char arrays of calling functions.\e[m");
-    // char b1[50],b2[50];
-    // printf("\nEnter first string: ");
-    // fgets(b1,50,stdin);
-    // printf("\nEnter second string: ");
-    // fgets(b2,50,stdin);
-    // swapStr(b1,b2);
-    // printf("After swaping, first string is %s and\nsecond is %s",b1,b2);
+    printf("\n\n\e[1mQuestion2. Write a function to swap strings of two char arrays of calling functions.\e[m");
+    char b1[50],b2[50];
+    printf("\nEnter first string: ");
+    fgets(b1,50,stdin);
+    printf("\nEnter second string: ");
+    fgets(b2,50,stdin);
+    swapStr(b1,b2);
+    printf("After swaping, first string is %s and\nsecond is %s",b1,b2);
 
-    // printf("\n\n\e[1mQuestion3. Write a function to sort an array of int type values. [ void sort(int *ptr,int size); ].\e[m");
-    // int c[10];
-    // printf("\nEnter 10 numbers: ");
-    // for(int i=0;i<10;i++)
-    //     scanf("%d",&c[i]);
-    // sortInt(c,10);
-    // for(int i=0;i<10;i++)
-    //     printf("%d ",c[i]);
+    printf("\n\n\e[1mQuestion3. Write a function to sort an array of int type values. [ void sort(int *ptr,int size); ].\e[m");
+    int c[10];
+    printf("\nEnter 10 numbers: ");
+    for(int i=0;i<10;i++)
+        scanf("%d",&c[i]);
+    sortInt(c,10);
+    for(int i=0;i<10;i++)
+        printf("%d ",c[i]);
 
-    // printf("\n\n\e[1mQuestion4. Write a program in C to demonstrate how to handle the pointers in the program..\e[m");
-    // int d[5]={10,5,7,90,1},*p4,**q4,***r4;
-    // p4=&d[0];
-    // q4=&p4;
-    // r4=&q4;
-    // printf("\n%p %p %p %p %p\n",d,d+1,d+2,d+3,d+4);
-    // printf("%d %d %d %d\n",*d,*(d+1),*(d+2),*(d+3));
-    // printf("%p %p %p %p\n",d,p4,q4,r4);
-    // printf("%d %d %d %d\n",*d,*p4,**q4,***r4);
+    printf("\n\n\e[1mQuestion4. Write a program in C to demonstrate how to handle the pointers in the program..\e[m");
+    int d[5]={10,5,7,90,1},*p4,**q4,***r4;
+    p4=&d[0];
+    q4=&p4;
+    r4=&q4;
+    printf("\n%p %p %p %p %p\n",d,d+1,d+2,d+3,d+4);
+    printf("%d %d %d %d\n",*d,*(d+1),*(d+2),*(d+3));
+    printf("%p %p %p %p\n",d,p4,q4,r4);
+    printf("%d %d %d %d\n",*d,*p4,**q4,***r4);
 
     printf("\n\n\e[1mQuestion5. Write a program to find the maximum number between two numbers using a pointer.\e[m");
     int e,f;
