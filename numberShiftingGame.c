@@ -65,7 +65,7 @@ int main()
                 u_input[p]=getch();
                 p++;
             }
-
+            system(cls);
             if((pos_i==0 && u_input[2]=='A') || (pos_i==3 && u_input[2]=='B') || (pos_j==0 && u_input[2]=='D') || (pos_j==3 && u_input[2]=='C'))
             {
                 printf("\nInvalid Move, Please try again ...");
