@@ -49,29 +49,34 @@ int main()
     // dataSwap(f1,f2);
     // cout<<"Numbers after swaping are "<<f1<<" and "<<f2<<" respectively";
 
-    printf("\n\n\e[1mQuestion7. Write a function using the default argument that is able to add 2 or 3 numbers..\e[m");
-    int g1,g2,g3,g4;
-    askAgain:
-    cout<<endl<<"Do you want to perform the sum of 2 numbers or 3 numbers: ";
-    cin>>g1;
-    if(g1==2)
-    {
-        cout<<"Enter "<<g1<<" numbers";
-        cin>>g2>>g3;
-        cout<<"Sum of "<<g1<<" numbers is "<<sum(g2,g3,g4);
-    }
-    if(g1==3)
-    {
-        cout<<"Enter "<<g1<<" numbers";
-        cin>>g2>>g3>>g4;
-        cout<<"Sum of "<<g1<<" numbers is "<<sum(g2,g3,g4);
-    }
-    else
-    {
-        cout<<"Invalid entry";
-        goto askAgain;
-    }
-    // printf("\n\n\e[1mQuestion8. Define overloaded functions to calculate area of circle, area of rectangle and area of triangle..\e[m");
+    // printf("\n\n\e[1mQuestion7. Write a function using the default argument that is able to add 2 or 3 numbers..\e[m");
+    // int g1,g2,g3,g4;
+    // askAgain:
+    // cout<<endl<<"Do you want to perform the sum of 2 numbers or 3 numbers: ";
+    // cin>>g1;
+    // if(g1==2)
+    // {
+    //     cout<<"Enter "<<g1<<" numbers";
+    //     cin>>g2>>g3;
+    //     cout<<"Sum of "<<g1<<" numbers is "<<sum(g2,g3,g4);
+    // }
+    // if(g1==3)
+    // {
+    //     cout<<"Enter "<<g1<<" numbers";
+    //     cin>>g2>>g3>>g4;
+    //     cout<<"Sum of "<<g1<<" numbers is "<<sum(g2,g3,g4);
+    // }
+    // else
+    // {
+    //     cout<<"Invalid entry";
+    //     goto askAgain;
+    // }
+
+    printf("\n\n\e[1mQuestion8. Define overloaded functions to calculate area of circle, area of rectangle and area of triangle..\e[m");
+
+
+
+
     // printf("\n\n\e[1mQuestion9. Write functions using function overloading to find a maximum of two numbers and both the numbers can be integer or real..\e[m");
     // printf("\n\n\e[1mQuestion10. Write functions using function overloading to add two numbers having different data types..\e[m");
     return 0;
