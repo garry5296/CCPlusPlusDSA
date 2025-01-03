@@ -1,4 +1,5 @@
 #include<iostream>
+#include<math.h>
 #define DIGIT (a%10)
 #define NEWNUM (a/10)
 #define MUL while(b){mul*=a;b--;}
@@ -8,6 +9,14 @@ int power(int,int);
 int fiboNumber(int);
 void dataSwap(int&,int&);
 int sum(int,int,int=0);
+float area(float);
+float area(float,float);
+float area(float,float,float);
+float jsum(float,float);
+float diff(float,float);
+// float diff(float,int);
+// float diff(int,float);
+// int diff(int,int);
 using namespace std;
 int main()
 {
@@ -72,16 +81,128 @@ int main()
     //     goto askAgain;
     // }
 
-    printf("\n\n\e[1mQuestion8. Define overloaded functions to calculate area of circle, area of rectangle and area of triangle..\e[m");
-
-
-
+    // printf("\n\n\e[1mQuestion8. Define overloaded functions to calculate area of circle, area of rectangle and area of triangle..\e[m");
+    // float hRadius,hLength,hBreadth,hSide1,hSide2,hSide3;
+    // cout<<endl<<"Enter radius: ";
+    // cin>>hRadius;
+    // cout<<"Area of circle is: "<<area(hRadius)<<endl;
+    // cout<<endl<<"Enter length and breadth: ";
+    // cin>>hLength>>hBreadth;
+    // cout<<"Area of circle is: "<<area(hLength,hBreadth)<<endl;
+    // cout<<endl<<"Enter three sides of triangle: ";
+    // cin>>hSide1>>hSide2>>hSide3;
+    // cout<<"Area of triangle is: "<<area(hSide1,hSide2,hSide3)<<endl;
 
     // printf("\n\n\e[1mQuestion9. Write functions using function overloading to find a maximum of two numbers and both the numbers can be integer or real..\e[m");
-    // printf("\n\n\e[1mQuestion10. Write functions using function overloading to add two numbers having different data types..\e[m");
+    // int iNum1,iNum2,iNum5,iNum6;float iNum3,iNum4,iNum7,iNum8;
+    // cout<<endl<<"Enter two whole numbers: ";
+    // cin>>iNum1>>iNum2;
+    // cout<<"Difference between both numbers is "<<diff(iNum1,iNum2);
+    // cout<<endl<<"Enter two real numbers: ";
+    // cin>>iNum3>>iNum4;
+    // cout<<"Difference between both numbers is "<<diff(iNum3,iNum4);
+    // cout<<endl<<"Enter one real and one whole number: ";
+    // cin>>iNum7>>iNum5;
+    // cout<<"Difference between both numbers is "<<diff(iNum7,iNum5);
+    // cout<<endl<<"Enter one whole and one real number: ";
+    // cin>>iNum6>>iNum8;
+    // cout<<"Difference between both numbers is "<<diff(iNum6,iNum8);
+
+    printf("\n\n\e[1mQuestion10. Write functions using function overloading to add two numbers having different data types..\e[m");
+    float jNum1,jNum2,jNum3,jNum4; int jNum5,jNum6,jNum7,jNum8;
+    // cout<<endl<<"Enter two real numbers: ";
+    // cin>>jNum1>>jNum2;
+    // cout<<"Sum of numbers is "<<jsum(jNum1,jNum2);
+    // cout<<endl<<"Enter two whole numbers: ";
+    // cin>>jNum5>>jNum6;
+    // cout<<"Sum of numbers is "<<jsum(jNum5,jNum6);
+    cout<<endl<<"Enter one real and one whole number: ";
+    cin>>jNum3>>jNum7;
+    cout<<"Sum of numbers is "<<jsum(jNum3,jNum7);
+    cout<<endl<<"Enter one whole and one real number: ";
+    cin>>jNum8>>jNum4;
+    cout<<"Sum of numbers is "<<jsum(jNum8,jNum4);
     return 0;
 }
 //functions
+int diff(int a,int b)
+{
+    int i=a-b;
+    if(i>0)
+        return i;
+    else
+    {
+        i=-i;
+        return i;
+    }
+}
+float diff(int a,float b)
+{
+    float i=a-b;
+    if(i>0)
+        return i;
+    else
+    {
+        i=-i;
+        return i;
+    }
+}
+float diff(float a,int b)
+{
+    float i=a-b;
+    if(i>0)
+        return i;
+    else
+    {
+        i=-i;
+        return i;
+    }
+}
+float diff(float a,float b)
+{
+    float i=a-b;
+    if(i>0)
+        return i;
+    else
+    {
+        i=-i;
+        return i;
+    }
+}
+float jsum(float a,float b)
+{
+    return a+b;
+}
+int jsum(int a,int b)
+{
+    return a+b;
+}
+float jsum(int a,float b)
+{
+    return a+b;
+}
+float jsum(float a,int b)
+{
+    return a+b;
+}
+float area(float r)
+{
+    return 3.14*r*r;
+}
+float area(float a,float b)
+{
+    return a*b;
+}
+float area(float a,float b,float c)
+{
+    if(a>0 && b>0 && c>0)
+    {
+        float s=(a+b+c)/2;
+        return sqrt(s*(s-a)*(s-b)*(s-c));
+    }
+    else
+        return 0;
+}
 int sum(int a,int b,int c)
 {
     return a+b+c;
