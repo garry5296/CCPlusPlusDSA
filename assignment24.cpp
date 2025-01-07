@@ -20,28 +20,28 @@ float diff(float,float);
 using namespace std;
 int main()
 {
-    // printf("\e[1mQuestion1. Define a function to check whether a given number is a Prime number or not..\e[m");
+    // cout<<"\e[1mQuestion1. Define a function to check whether a given number is a Prime number or not..\e[m";
     // int a1,i=2;char flag='f';
     // cout<<endl<<"Enter number:";
     // cin>>a1;
     // checkPrime(a1);
 
-    // printf("\n\n\e[1mQuestion2. Define a function to find the highest value digit in a given number..\e[m");
+    // cout<<"\n\n\e[1mQuestion2. Define a function to find the highest value digit in a given number..\e[m";
     // int b1;
     // cout<<endl<<"Enter a number: ";
     // cin>>b1;
     // cout<<"The highest value of digit in the number is "<<highDigit(b1);
 
-    // printf("\n\n\e[1mQuestion3. Define a function to calculate x raised to the power y..\e[m");
+    // cout<<"\n\n\e[1mQuestion3. Define a function to calculate x raised to the power y..\e[m";
     // int c1,c2;
     // cout<<endl<<"Enter a number and it's power: ";
     // cin>>c1>>c2;
     // cout<<c1<<" raised to the power "<<c2<<" is "<<power(c1,c2);
 
-    // printf("\n\n\e[1mQuestion4. Define a function to print Pascal Triangle up to N lines..\e[m");
+    // cout<<"\n\n\e[1mQuestion4. Define a function to print Pascal Triangle up to N lines..\e[m";
 
 
-    // printf("\n\n\e[1mQuestion5. Define a function to check whether a given number is a term in a Fibonacci series or not..\e[m");
+    // cout<<"\n\n\e[1mQuestion5. Define a function to check whether a given number is a term in a Fibonacci series or not..\e[m";
     // int e1;
     // cout<<endl<<"Enter a number: ";
     // cin>>e1;
@@ -51,14 +51,14 @@ int main()
     //     cout<<e1<<" is not present in a Fibonacci series..";
 
 
-    // printf("\n\n\e[1mQuestion6. Define a function to swap data of two int variables using call by reference.\e[m");
+    // cout<<"\n\n\e[1mQuestion6. Define a function to swap data of two int variables using call by reference.\e[m";
     // int f1,f2;
     // cout<<endl<<"Enter two numbers: ";
     // cin>>f1>>f2;
     // dataSwap(f1,f2);
     // cout<<"Numbers after swaping are "<<f1<<" and "<<f2<<" respectively";
 
-    // printf("\n\n\e[1mQuestion7. Write a function using the default argument that is able to add 2 or 3 numbers..\e[m");
+    // cout<<"\n\n\e[1mQuestion7. Write a function using the default argument that is able to add 2 or 3 numbers..\e[m";
     // int g1,g2,g3,g4;
     // askAgain:
     // cout<<endl<<"Do you want to perform the sum of 2 numbers or 3 numbers: ";
@@ -81,7 +81,7 @@ int main()
     //     goto askAgain;
     // }
 
-    // printf("\n\n\e[1mQuestion8. Define overloaded functions to calculate area of circle, area of rectangle and area of triangle..\e[m");
+    // cout<<"\n\n\e[1mQuestion8. Define overloaded functions to calculate area of circle, area of rectangle and area of triangle..\e[m";
     // float hRadius,hLength,hBreadth,hSide1,hSide2,hSide3;
     // cout<<endl<<"Enter radius: ";
     // cin>>hRadius;
@@ -93,7 +93,7 @@ int main()
     // cin>>hSide1>>hSide2>>hSide3;
     // cout<<"Area of triangle is: "<<area(hSide1,hSide2,hSide3)<<endl;
 
-    // printf("\n\n\e[1mQuestion9. Write functions using function overloading to find a maximum of two numbers and both the numbers can be integer or real..\e[m");
+    // cout<<"\n\n\e[1mQuestion9. Write functions using function overloading to find a maximum of two numbers and both the numbers can be integer or real..\e[m";
     // int iNum1,iNum2,iNum5,iNum6;float iNum3,iNum4,iNum7,iNum8;
     // cout<<endl<<"Enter two whole numbers: ";
     // cin>>iNum1>>iNum2;
@@ -108,20 +108,20 @@ int main()
     // cin>>iNum6>>iNum8;
     // cout<<"Difference between both numbers is "<<diff(iNum6,iNum8);
 
-    printf("\n\n\e[1mQuestion10. Write functions using function overloading to add two numbers having different data types..\e[m");
-    float jNum1,jNum2,jNum3,jNum4; int jNum5,jNum6,jNum7,jNum8;
+    // cout"\n\n\e[1mQuestion10. Write functions using function overloading to add two numbers having different data types..\e[m";
+    // float jNum1,jNum2,jNum3,jNum4; int jNum5,jNum6,jNum7,jNum8;
     // cout<<endl<<"Enter two real numbers: ";
     // cin>>jNum1>>jNum2;
     // cout<<"Sum of numbers is "<<jsum(jNum1,jNum2);
     // cout<<endl<<"Enter two whole numbers: ";
     // cin>>jNum5>>jNum6;
     // cout<<"Sum of numbers is "<<jsum(jNum5,jNum6);
-    cout<<endl<<"Enter one real and one whole number: ";
-    cin>>jNum3>>jNum7;
-    cout<<"Sum of numbers is "<<jsum(jNum3,jNum7);
-    cout<<endl<<"Enter one whole and one real number: ";
-    cin>>jNum8>>jNum4;
-    cout<<"Sum of numbers is "<<jsum(jNum8,jNum4);
+    // cout<<endl<<"Enter one real and one whole number: ";
+    // cin>>jNum3>>jNum7;
+    // cout<<"Sum of numbers is "<<jsum(jNum3,jNum7);
+    // cout<<endl<<"Enter one whole and one real number: ";
+    // cin>>jNum8>>jNum4;
+    // cout<<"Sum of numbers is "<<jsum(jNum8,jNum4);
     return 0;
 }
 //functions
