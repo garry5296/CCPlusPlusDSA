@@ -5,7 +5,7 @@ class Complex{
 	private:
 		int real,imag;
 	public:
-		void setValue()
+		void getValue()
 		{
 			cout<<endl<<"Enter real and imag part of complex number: ";
 			cin>>real>>imag;
@@ -19,7 +19,7 @@ class Time{
 	private:
 		int hr,min,sec;
 	public:
-		void setValue()
+		void getValue()
 		{
 			input:
 			cout<<endl<<"Enter hours, minutes and seconds: ";
@@ -38,7 +38,7 @@ class Time{
 class Factorial{
 		int num;
 	public:
-		void setVal()
+		void getVal()
 		{
 			cout<<endl<<"Enter a number to calculate factorial: ";
 			cin>>num;
@@ -54,7 +54,7 @@ class LargestNumber{
 	private:
 		int num1,num2,num3;
 	public:
-		void setVal()
+		void getVal()
 		{
 			cout<<endl<<"Enter three numbers: ";
 			cin>>num1>>num2>>num3;
@@ -76,7 +76,7 @@ class ReverseNumber{
 			}
 		}
 	public:
-		void setVal()
+		void getVal()
 		{
 			cout<<endl<<"Enter a number to find it's reverse: ";
 			cin>>num;
@@ -94,7 +94,7 @@ class Square{
 		int num;
 		static int n;
 	public:
-		void setVal()
+		void getVal()
 		{
 			cout<<endl<<"Enter a number: ";
 			cin>>num;
@@ -108,7 +108,7 @@ class Greatest{
 	private:
 		int num1,num2,num3;
 	public:
-		void setVal()
+		void getVal()
 		{
 			cout<<endl<<"Enter three numbers: ";
 			cin>>num1>>num2>>num3;
@@ -122,7 +122,7 @@ class Rectangle{
 	private:
 		int l,b;
 	public:
-		void setVal()
+		void getVal()
 		{
 			cout<<endl<<"Enter length and breadth of a rectangle: ";
 			cin>>l>>b;
@@ -140,7 +140,7 @@ class Circle{
 	private:
 		int r;
 	public:
-		void setVal()
+		void getVal()
 		{
 			cout<<endl<<"Enter radius of the circle: ";
 			cin>>r;
@@ -153,60 +153,93 @@ class Circle{
 		}
 };
 class Area{
-	int r,l,b,side
-}
+	private:
+		int r,len,bre,side;
+	public:
+		void getDataCircle(int a)
+		{
+			r=a;
+		}
+		void getDataRectangle(int a,int b)
+		{
+			len=a;
+			bre=b;
+		}
+		void getDataSquare(int a)
+		{
+			side=a;
+		}
+		void circleArea()
+		{
+			cout<<endl<<"Area of circle is: "<<r*r*3.14;
+		}
+		void rectangleArea()
+		{
+			cout<<endl<<"Area of rectangle is: "<<len*bre;
+		}
+		void squareArea()
+		{
+			cout<<endl<<"Area of square is: "<<side*side;
+		}
+};
 int main()
 {
-	// cout<<"\n\n\e[1mQuestion1. Define a class Complex to represent a complex number. Declare instance member variables to store real and imaginary part of a complex number, also define instance member functions to set values of complex number and print values of complex number.\e[m";
-	// Complex c1,c2;
-	// c1.setValue();
-	// c1.disPlay();
-	// c2.setValue();
-	// c2.disPlay();
+	cout<<"\n\n\e[1mQuestion1. Define a class Complex to represent a complex number. Declare instance member variables to store real and imaginary part of a complex number, also define instance member functions to set values of complex number and print values of complex number.\e[m";
+	Complex c1,c2;
+	c1.getValue();
+	c1.disPlay();
+	c2.getValue();
+	c2.disPlay();
 
-	/*cout<<"\n\n\e[1mQuestion2. Define a class Time to represent Time (like 3 hr 45 min 20 sec). Declare appropriate number of instance member variables and also define instance member functions to set values for time and display values of time..\e[m";
+	cout<<"\n\n\e[1mQuestion2. Define a class Time to represent Time (like 3 hr 45 min 20 sec). Declare appropriate number of instance member variables and also define instance member functions to set values for time and display values of time..\e[m";
 	Time t1;
-	t1.setValue();
-	t1.disPlay();*/
+	t1.getValue();
+	t1.disPlay();
 
-	// cout<<"\n\n\e[1mQuestion3. Define a class Factorial and define an instance member function to find the Factorial of a number using class..\e[m";
-	// Factorial f1;
-	// f1.setVal();
-	// cout<<"The factorial of number is "<<f1.fact(f1.num);
+	cout<<"\n\n\e[1mQuestion3. Define a class Factorial and define an instance member function to find the Factorial of a number using class..\e[m";
+	Factorial f1;
+	f1.getVal();
+	cout<<"The factorial of number is "<<f1.fact(f1.num);
 
-	// cout<<"\n\n\e[1mQuestion4. Define a class LargestNumber and define an instance member function to find the Largest of three Numbers using the class..\e[m";
-	// LargestNumber l1;
-	// l1.setVal();
-	// cout<<"The largest of three number is "<<l1.largestNum();
+	cout<<"\n\n\e[1mQuestion4. Define a class LargestNumber and define an instance member function to find the Largest of three Numbers using the class..\e[m";
+	LargestNumber l1;
+	l1.getVal();
+	cout<<"The largest of three number is "<<l1.largestNum();
 
-	// cout<<"\n\n\e[1mQuestion5. Define a class ReverseNumber and define an instance member function to find Reverse of a Number using class..\e[m";
-	// ReverseNumber r1;
-	// r1.setVal();
-	// r1.numRevMain();
+	cout<<"\n\n\e[1mQuestion5. Define a class ReverseNumber and define an instance member function to find Reverse of a Number using class..\e[m";
+	ReverseNumber r1;
+	r1.getVal();
+	r1.numRevMain();
 
-	// printf("\n\n\e[1mQuestion6. Define a class Square to find the square of a number and write a C++ program to Count number of times a function is called..\e[m");
-	// Square s1;
-	// s1.setVal();
-	// cout<<"The square of given number is "<<s1.numSq();
+	printf("\n\n\e[1mQuestion6. Define a class Square to find the square of a number and write a C++ program to Count number of times a function is called..\e[m");
+	Square s1;
+	s1.getVal();
+	cout<<"The square of given number is "<<s1.numSq();
 	
-	// printf("\n\n\e[1mQuestion7. Define a class Greatest and define instance member function to find Largest among 3 numbers using classes..\e[m");
-	// Greatest g1;
-	// g1.setVal();
-	// cout<<"The largest of three number is "<<g1.greatestNum();
+	printf("\n\n\e[1mQuestion7. Define a class Greatest and define instance member function to find Largest among 3 numbers using classes..\e[m");
+	Greatest g1;
+	g1.getVal();
+	cout<<"The largest of three number is "<<g1.greatestNum();
 
-	// printf("\n\n\e[1mQuestion8. Define a class Rectangle and define an instance member function to find the area of the rectangle..\e[m");
-	// Rectangle r1;
-	// r1.setVal();
-	// cout<<"Area of rectangle is "<<r1.recArea();
+	printf("\n\n\e[1mQuestion8. Define a class Rectangle and define an instance member function to find the area of the rectangle..\e[m");
+	Rectangle r1;
+	r1.getVal();
+	cout<<"Area of rectangle is "<<r1.recArea();
 
-	// printf("\n\n\e[1mQuestion9. Define a class Circle and define an instance member function to find the area of the circle..\e[m");
-	// Circle c1;
-	// c1.setVal();
-	// cout<<"Area of the circle is "<<c1.circleArea();
+	printf("\n\n\e[1mQuestion9. Define a class Circle and define an instance member function to find the area of the circle..\e[m");
+	Circle c1;
+	c1.getVal();
+	cout<<"Area of the circle is "<<c1.circleArea();
 
 
 	printf("\n\n\e[1mQuestion10. Define a class Area and define instance member functions to find the area of the different shapes like square, rectangle , circle etc..\e[m");
-	cout<<
+	Area a1;
+	a1.getDataCircle(5);
+	a1.circleArea();
+	a1.getDataRectangle(6,4);
+	a1.rectangleArea();
+	a1.getDataSquare(13);
+	a1.squareArea();
 	
 
 	return 0;
