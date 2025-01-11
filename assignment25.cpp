@@ -43,11 +43,15 @@ class Factorial{
 			cout<<endl<<"Enter a number to calculate factorial: ";
 			cin>>num;
 		}
-		int fact(int n)
+		int fact()
 		{
-			if(n == 1)
-				return 1;
-			return n*fact(n-1);
+			int prod=1;
+			while(num>=1)
+			{
+				prod*=num;
+				num--;
+			}
+			return prod;
 		}
 };
 class LargestNumber{
@@ -199,7 +203,7 @@ int main()
 	cout<<"\n\n\e[1mQuestion3. Define a class Factorial and define an instance member function to find the Factorial of a number using class..\e[m";
 	Factorial f1;
 	f1.getVal();
-	cout<<"The factorial of number is "<<f1.fact(f1.num);
+	cout<<"The factorial of number is "<<f1.fact();
 
 	cout<<"\n\n\e[1mQuestion4. Define a class LargestNumber and define an instance member function to find the Largest of three Numbers using the class..\e[m";
 	LargestNumber l1;
@@ -222,15 +226,14 @@ int main()
 	cout<<"The largest of three number is "<<g1.greatestNum();
 
 	printf("\n\n\e[1mQuestion8. Define a class Rectangle and define an instance member function to find the area of the rectangle..\e[m");
-	Rectangle r1;
-	r1.getVal();
-	cout<<"Area of rectangle is "<<r1.recArea();
+	Rectangle rec1;
+	rec1.getVal();
+	cout<<"Area of rectangle is "<<rec1.recArea();
 
 	printf("\n\n\e[1mQuestion9. Define a class Circle and define an instance member function to find the area of the circle..\e[m");
-	Circle c1;
-	c1.getVal();
-	cout<<"Area of the circle is "<<c1.circleArea();
-
+	Circle cir1;
+	cir1.getVal();
+	cout<<"Area of the circle is "<<cir1.circleArea();
 
 	printf("\n\n\e[1mQuestion10. Define a class Area and define instance member functions to find the area of the different shapes like square, rectangle , circle etc..\e[m");
 	Area a1;
@@ -240,7 +243,5 @@ int main()
 	a1.rectangleArea();
 	a1.getDataSquare(13);
 	a1.squareArea();
-	
-
 	return 0;
 }
