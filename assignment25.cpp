@@ -218,27 +218,27 @@ int main()
 	r1.getVal();
 	r1.numRevMain();
 
-	printf("\n\n\e[1mQuestion6. Define a class Square to find the square of a number and write a C++ program to Count number of times a function is called..\e[m");
+	cout<<endl<<endl"\e[1mQuestion6. Define a class Square to find the square of a number and write a C++ program to Count number of times a function is called..\e[m");
 	assign25::Square s1;
 	s1.getVal();
 	cout<<"The square of given number is "<<s1.numSq();
 	
-	printf("\n\n\e[1mQuestion7. Define a class Greatest and define instance member function to find Largest among 3 numbers using classes..\e[m");
+	cout<<endl<<endl"\e[1mQuestion7. Define a class Greatest and define instance member function to find Largest among 3 numbers using classes..\e[m");
 	assign25::Greatest g1;
 	g1.getVal();
 	cout<<"The largest of three number is "<<g1.greatestNum();
 
-	printf("\n\n\e[1mQuestion8. Define a class Rectangle and define an instance member function to find the area of the rectangle..\e[m");
+	cout<<endl<<endl"\e[1mQuestion8. Define a class Rectangle and define an instance member function to find the area of the rectangle..\e[m");
 	assign25::Rectangle rec1;
 	rec1.getVal();
 	cout<<"Area of rectangle is "<<rec1.recArea();
 
-	printf("\n\n\e[1mQuestion9. Define a class Circle and define an instance member function to find the area of the circle..\e[m");
+	cout<<endl<<endl"\e[1mQuestion9. Define a class Circle and define an instance member function to find the area of the circle..\e[m");
 	assign25::Circle cir1;
 	cir1.getVal();
 	cout<<"Area of the circle is "<<cir1.circleArea();
 
-	printf("\n\n\e[1mQuestion10. Define a class Area and define instance member functions to find the area of the different shapes like square, rectangle , circle etc..\e[m");
+	cout<<endl<<endl"\e[1mQuestion10. Define a class Area and define instance member functions to find the area of the different shapes like square, rectangle , circle etc..\e[m");
 	assign25::Area a1;
 	a1.getDataCircle(5);
 	a1.circleArea();

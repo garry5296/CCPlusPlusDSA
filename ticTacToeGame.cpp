@@ -1,6 +1,9 @@
 #include<iostream>
 #include<cstdlib>
 using namespace std;
+// #define if(i==1) x[a]='x';
+// #define if(i==2) x[a]='o';
+
 void smartComputer(char[]);
 void evilComputer(char[]);
 void display(char[]);
@@ -8,10 +11,6 @@ int match(char[]);
 void compInput(char[],int,int[]);
 void evilCompInput(char x[],int a,int b[]);
 void player(char[]);
-// namespace ticTacToe
-// {
-
-// };
 static int tC=0;
 int main()
 {
