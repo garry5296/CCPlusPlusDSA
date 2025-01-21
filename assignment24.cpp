@@ -14,6 +14,9 @@ float area(float,float);
 float area(float,float,float);
 float jsum(float,float);
 float diff(float,float);
+int fact(int);
+int comb(int,int);
+int perm(int,int);
 // float diff(float,int);
 // float diff(int,float);
 // int diff(int,int);
@@ -39,7 +42,19 @@ int main()
     cout<<c1<<" raised to the power "<<c2<<" is "<<power(c1,c2);
 
     cout<<"\n\n\e[1mQuestion4. Define a function to print Pascal Triangle up to N lines..\e[m";
-
+    int d1;
+    cout<<endl<<"Enter the height of pascal triangle: ";
+    cin>>d1;
+    for(int d2=0;d2<d1;d2++)
+    {
+        for(int d4=0;d4<3-d2;d4++)
+            cout<<" ";
+        for(int d3=0;d3<=d2;d3++)
+        {
+            cout<<comb(d2,d3)<<" ";
+        }
+        cout<<endl;
+    }
 
     cout<<"\n\n\e[1mQuestion5. Define a function to check whether a given number is a term in a Fibonacci series or not..\e[m";
     int e1;
@@ -125,6 +140,21 @@ int main()
     return 0;
 }
 //functions
+int fact(int a)
+{
+    int b=1;
+    for(int i=1;i<=a;i++)
+        b*=i;
+    return b;
+}
+int perm(int a,int b)
+{
+    return fact(a)/fact(a-b);
+}
+int comb(int a,int b)
+{
+    return fact(a)/(fact(b)*fact(a-b));
+}
 int diff(int a,int b)
 {
     int i=a-b;
