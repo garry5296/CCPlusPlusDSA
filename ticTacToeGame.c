@@ -1,9 +1,6 @@
-#include<iostream>
-#include<cstdlib>
-using namespace std;
-// #define if(i==1) x[a]='x';
-// #define if(i==2) x[a]='o';
-
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 void smartComputer(char[]);
 void evilComputer(char[]);
 void display(char[]);
@@ -11,26 +8,36 @@ int match(char[]);
 void compInput(char[],int,int[]);
 void evilCompInput(char x[],int a,int b[]);
 void player(char[]);
-static int tC=0;
+int ask(char[]);
+int tC=0;
 int main()
 {
-    int input;char a[10]={'0','1','2','3','4','5','6','7','8','9'},b;
-    cout<<"Enter your choice"<<endl<<"1. Want to play with Smart Computer"<<endl<<"2. Want to play with Evil Computer"<<endl<<"3. Want to play with player"<<endl<<"4. Exit"<<endl;
-    cin>>input;
+    int input;char a[10]={'0','1','2','3','4','5','6','7','8','9'};
+    begin:
+    printf("Enter your choice\n1. Want to play with Smart Computer\n2. Want to play with Evil Computer\n3. Want to play with player\n4. Exit\n\n");
+    scanf("%d",&input);
     system("clear");
 
     switch(input)
     {
         case 1:
+            for(int i=0;i<=9;i++)
+                printf("%c ",a[i]);
             smartComputer(a);
+            if(ask(a))
+                goto begin;
             break;
 
         case 2:
             evilComputer(a);
+            if(ask(a))
+                goto begin;
             break;
 
         case 3:
             player(a);
+            if(ask(a))
+                goto begin;
             break;
 
         default:
@@ -40,6 +47,21 @@ int main()
     return 0;
 }
 //functions
+int ask(char a[])
+{
+    char x;
+    printf("Do you want to play again ? - enter Y/y for yes or press any other key to exit.");
+    while(getchar()!='\n');
+    scanf("%c",&x);
+    if(x=='y' || x=='Y')
+    {
+        strcpy(a,"0123456789");
+        tC=0;
+        return 1;
+    }
+    else
+        return 0;
+}
 void player(char x[])
 {
     int flag=0,a,b[10]={0};
@@ -50,8 +72,8 @@ void player(char x[])
             for(int i=1;i<=2;i++)
             {
                 display(x);
-                cout<<"Player -'"<<i<<"' turn, please enter position: ";
-                cin>>a;
+                printf("Player -'%d' turn, please enter position: ",i);
+                scanf("%d",&a);
                 if(b[a]==0 && a>=1 && a<=9)
                 {
                     b[a]=1;
@@ -67,15 +89,15 @@ void player(char x[])
                     {
                         system("clear");
                         display(x);
-                        cout<<"Player '"<<i<<"' - You won !!"<<endl<<endl;
-                        cout<<"###########################################################################"<<endl<<endl;
+                        printf("Player '%d' - You won !!\n\n",i);
+                        printf("###########################################################################\n\n");
                         break;
                     }
                 }
                 else
                 {
                     system("clear");
-                    cout<<"\033[0;31mInvalid position!!\033[0m"<<endl<<endl;
+                    printf("\033[0;31mInvalid position!!\033[0m\n\n");
                 }
                 system("clear");
             }
@@ -84,8 +106,8 @@ void player(char x[])
         {
             system("clear");
             display(x);
-            cout<<"Game Draw !!"<<endl<<endl;
-            cout<<"###########################################################################"<<endl<<endl;
+            printf("Game Draw !!\n\n");
+            printf("###########################################################################\n\n");
             break;
         }
     }
@@ -97,8 +119,8 @@ void evilComputer(char x[])
     do
     {
         display(x);
-        cout<<"Your turn, please enter position: ";
-        cin>>a;
+        printf("Your turn, please enter position: ");
+                scanf("%d",&a);
         if(b[a]==0 && a>=1 && a<=9)
         {
             b[a]=1;
@@ -111,8 +133,8 @@ void evilComputer(char x[])
             {
                 system("clear");
                 display(x);
-                cout<<"You won !!"<<endl<<endl;
-                cout<<"###########################################################################"<<endl<<endl;
+                printf("You won !!\n\n");
+                printf("###########################################################################\n\n");
                 break;
             }
 
@@ -124,8 +146,8 @@ void evilComputer(char x[])
             {
                 system("clear");
                 display(x);
-                cout<<"You lose !!"<<endl<<endl;
-                cout<<"###########################################################################"<<endl<<endl;
+                printf("You lose !!\n\n");
+                printf("###########################################################################\n\n");
                 break;
             }
 
@@ -134,8 +156,8 @@ void evilComputer(char x[])
             {
                 system("clear");
                 display(x);
-                cout<<"Game Draw !!"<<endl<<endl;
-                cout<<"###########################################################################"<<endl<<endl;
+                printf("Game Draw !!\n\n");
+                printf("###########################################################################\n\n");
                 break;
             }
 
@@ -144,7 +166,7 @@ void evilComputer(char x[])
         else
         {
             system("clear");
-            cout<<"\033[0;31mInvalid position!!\033[0m"<<endl<<endl;
+            printf("\033[0;31mInvalid position!!\033[0m");
         }
     }
     while(!flag);
@@ -155,8 +177,8 @@ void smartComputer(char x[])
     do
     {
         display(x);
-        cout<<"Your turn, please enter position: ";
-        cin>>a;
+        printf("Your turn, please enter position: ");
+        scanf("%d",&a);
         if(b[a]==0 && a>=1 && a<=9)
         {
             b[a]=1;
@@ -169,8 +191,8 @@ void smartComputer(char x[])
             {
                 system("clear");
                 display(x);
-                cout<<"You won !!"<<endl<<endl;
-                cout<<"###########################################################################"<<endl<<endl;
+                printf("You won !!\n\n");
+                printf("###########################################################################\n\n");
                 break;
             }
 
@@ -182,8 +204,8 @@ void smartComputer(char x[])
             {
                 system("clear");
                 display(x);
-                cout<<"You lose !!"<<endl<<endl;
-                cout<<"###########################################################################"<<endl<<endl;
+                printf("You lose !!\n\n");
+                printf("###########################################################################\n\n");
                 break;
             }
 
@@ -192,8 +214,8 @@ void smartComputer(char x[])
             {
                 system("clear");
                 display(x);
-                cout<<"Game Draw !!"<<endl<<endl;
-                cout<<"###########################################################################"<<endl<<endl;
+                printf("Game Draw !!\n\n");
+                printf("###########################################################################\n\n");
                 break;
             }
 
@@ -202,7 +224,7 @@ void smartComputer(char x[])
         else
         {
             system("clear");
-            cout<<"\033[0;31mInvalid position!!\033[0m"<<endl<<endl;
+            printf("\033[0;31mInvalid position!!\033[0m\n\n");
         }
     }
     while(!flag);
@@ -447,18 +469,18 @@ void compInput(char x[],int a,int b[])
 }
 void display(char x[])
 {
-    cout<<endl<<"############################## Tic Tac Toe ##############################"<<endl<<endl;
-    cout<<"First Player x"<<endl<<"Second Player o"<<endl<<endl;
-    cout<<"   |   |   "<<endl;
-    cout<<" "<<x[1]<<" | "<<x[2]<<" | "<<x[3]<<endl;
-    cout<<"___|___|___"<<endl;
-    cout<<"   |   |   "<<endl;
-    cout<<" "<<x[4]<<" | "<<x[5]<<" | "<<x[6]<<endl;
-    cout<<"___|___|___"<<endl;
-    cout<<"   |   |   "<<endl;
-    cout<<" "<<x[7]<<" | "<<x[8]<<" | "<<x[9]<<endl;
-    cout<<"___|___|___"<<endl;
-    cout<<endl<<"#########################################################################"<<endl<<endl;
+    printf("\n############################## Tic Tac Toe ##############################\n\n");
+    printf("First Player x\nSecond Player o\n\n");
+    printf("   |   |   \n");
+    printf(" %c | %c | %c \n",x[1],x[2],x[3]);
+    printf("___|___|___\n");
+    printf("   |   |   \n");
+    printf(" %c | %c | %c \n",x[4],x[5],x[6]);
+    printf("___|___|___\n");
+    printf("   |   |   \n");
+    printf(" %c | %c | %c \n",x[7],x[8],x[9]);
+    printf("___|___|___\n");
+    printf("\n#########################################################################\n\n");
 }
 int match(char x[])
 {
