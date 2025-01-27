@@ -60,6 +60,23 @@ namespace assign26
             Student(char a[],int b,int c,int d) { strcpy(sName,a); sRollNum=b; sAge=c; sClass=d; }
             void display() { cout<<endl<<"Name of student is "<<sName<<", age is "<<sAge<<", roll number is "<<sRollNum<<" and class is "<<sClass; }
     };
+    class Box
+    {
+        private:
+            int length, breadth, height;
+        public:
+            Box(int a,int b,int c) { length=a; breadth=b; height=c; }
+            void volume() { cout<<endl<<"Volume of the box is "<<length*breadth*height; }
+    };
+    class Bank
+    {
+        private:
+            int p,t;
+            float r;
+        public:
+            Bank(int a,float b,int c) { p=a; r=b; t=c;}
+            void simpInt() { cout<<endl<<"The simple interest is "<<(p*r*t)/100; }
+    };
 };
 int main()
 {
@@ -97,7 +114,12 @@ and"<<endl<<"b to store real and imaginary parts. Also define following member f
     s1.display();
 
     cout<<endl<<endl<<"\e[1mQuestion7. Define a class Box and write a program to enter length, breadth and height and initialise objects using constructor also define member functions to calculate volume of the box..\e[m";
+    assign26::Box b1(4,5,6);
+    b1.volume();
+
     cout<<endl<<endl<<"\e[1mQuestion8. Define a class Bank and define member functions to read principal , rate of interest and year. Another member functions to calculate simple interest and display it.Initialise all details using constructor..\e[m";
+    assign26::Bank B1(10000,4.5,2);
+    B1.simpInt();
 
     return 0;
 }
