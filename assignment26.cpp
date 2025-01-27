@@ -77,7 +77,42 @@ namespace assign26
             Bank(int a,float b,int c) { p=a; r=b; t=c;}
             void simpInt() { cout<<endl<<"The simple interest is "<<(p*r*t)/100; }
     };
+    class Bill
+    {
+        private:
+            char name[20];
+            int id;
+            float unit;
+        public:
+            void set()
+            {
+                cout<<endl<<"Enter name,id and units";
+                cin.getline(name,20);
+                cin>>id>>unit;
+            }
+            void calculateBill()
+            {
+                if(unit>0 && unit<=100)
+                    cout<<"The total bill amount is Rs"<<unit*1.20<<"/-";
+                else if (unit>100 && unit<=200)
+                    cout<<"The total bill amount is Rs"<<unit*2<<"/-";
+                else
+                    cout<<"The total bill amount is Rs"<<unit*3<<"/-";
+            }
+    };
+    class staticCount
+    {
+        private:
+            static int a;
+        public:
+            static void increment()
+            {
+                a++;
+                cout<<endl<<"value of static variable is "<<a;
+            }
+    };
 };
+int assign26::staticCount::a=0;
 int main()
 {
     cout<<endl<<endl<<"\e[1mQuestion1. Define a class Complex to represent a complex number with instance variables a \
@@ -109,9 +144,9 @@ and"<<endl<<"b to store real and imaginary parts. Also define following member f
     assign26::Date d1(13,12,2024);
     d1.display();
 
-    cout<<endl<<endl<<"\e[1mQuestion6. Define a class student and write a program to enter student details using constructor and define member function to display all the details..\e[m";
-    assign26::Student s1("Gurpreet",13,12,9);
-    s1.display();
+    // cout<<endl<<endl<<"\e[1mQuestion6. Define a class student and write a program to enter student details using constructor and define member function to display all the details..\e[m";
+    // assign26::Student s1("Gurpreet",13,12,9);
+    // s1.display();
 
     cout<<endl<<endl<<"\e[1mQuestion7. Define a class Box and write a program to enter length, breadth and height and initialise objects using constructor also define member functions to calculate volume of the box..\e[m";
     assign26::Box b1(4,5,6);
@@ -121,5 +156,14 @@ and"<<endl<<"b to store real and imaginary parts. Also define following member f
     assign26::Bank B1(10000,4.5,2);
     B1.simpInt();
 
+    cout<<endl<<endl<<"\e[1mQuestion9. Define a class Bill and define its member function get() to take detail of customer, calculateBill() function to calculate electricity bill using below tariff :."<<endl<<"Upto 100 unit RS. 1.20 per unit"<<endl<<"From 100 to 200 unit RS. 2 per unit"<<endl<<"Above 200 units RS. 3 per unit.\e[m";
+    assign26::Bill bill1;
+    bill1.set();
+    bill1.calculateBill();
+
+    cout<<endl<<endl<<"\e[1mQuestion10. Define a class StaticCount and create a static variable. Increment this variable in a function and call this 3 times and display the result..\e[m";
+    assign26::staticCount::increment();
+    assign26::staticCount::increment();
+    assign26::staticCount::increment();
     return 0;
 }
