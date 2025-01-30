@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
-namespace assign27
-{
+// namespace assign27
+// {
     class Complex
     {
         private:
@@ -9,7 +9,7 @@ namespace assign27
         public:
             Complex(int a,int b) { real=a;imag=b; }
             Complex() {}
-            Complex operator+(Complex A) { A.real=real+A.real; A.imag=imag+A.imag; return A; }
+            // Complex operator+(Complex A) { A.real=real+A.real; A.imag=imag+A.imag; return A; }
             Complex operator-(Complex A) { A.real=real-A.real; A.imag=imag-A.imag; return A; }
             Complex operator*(Complex A) { A.real=real*A.real; A.imag=imag*A.imag; return A; }
             bool operator==(Complex A)
@@ -24,75 +24,71 @@ namespace assign27
             void operator--() { real--; imag--; }
             void displayinc() { cout<<endl<<"After incrementing the status is "<<real<<","<<imag; }
             void displaydec() { cout<<endl<<"After decrementing the status is "<<real<<","<<imag; }
-            // friend void operator+(Complex);
+            friend Complex operator+(Complex,Complex);
     };
-    // class Time
-    // {
-    //     private:
-    //         int hours,minutes,seconds;
-    //     public:
-    //         Time operator>>(Time A)
-    //         {
-    //             hour:
-    //             cout<<"Enter Hours   :  ";
-    //             cin>>hours;
-    //             if(hours>24)
-    //             {
-    //                 cout<<"Invalid hours!!"
-    //                 goto hour;
-    //             }
-    //             minute:
-    //             cout<<"Enter Minutes :  ";
-    //             cin>>minutes;
-    //             if(minutes>60)
-    //             {
-    //                 cout<<"Invalid minutes!!"
-    //                 goto minute;
-    //             }
-    //             second:
-    //             cout<<"Enter Seconds :  ";
-    //             cin>>seconds;
-    //             if(seconds>60)
-    //             {
-    //                 cout<<"Invalid seconds!!"
-    //                 goto second;
-    //             }
-    //         }
-    //         Time operator==(Time A)
-    //         {
-    //             if(hours==A.hours &&
-    //             minutes==A.minutes &&
-    //             seconds==A.seconds)
-    //                 cout<<"Both times are same!!";
-    //             else
-    //                 cout<<"Both times are not same!!";
-    //         }
-    //         Time operator>>(Time A)
-    //         {
-
-    //         }
-    // };
-    // class Complex2
-    // {
-    //     private:
-    //         int real,imag;
-    //     public:
-    //         Complex2(int a,int b) { real=a;imag=b; }
-    //         void operator+(Complex);
-    // };
-};
-// void assign27::Complex2::operator+(Complex A)
-// {
-//     Complex temp;
-//     temp.real=real+A.real;
-//     temp.imag=imag+A.imag;
-//     cout<<"Real is "<<temp.real<<" & imag is "<<temp.imag;
-// } 
+    class Time
+    {
+        private:
+            int hours,minutes,seconds;
+        public:
+            friend void operator>>(istream,Time);
+            friend void operator<<(ostream,Time);
+            void operator==(Time A)
+            {
+                if(hours==A.hours &&
+                minutes==A.minutes &&
+                seconds==A.seconds)
+                    cout<<"Times are same!!";
+                else
+                    cout<<"Times are different!!";
+            }
+    };
+// };
+Complex operator+(Complex A,Complex B)
+{
+    Complex temp;
+    temp.real=A.real+B.real;
+    temp.imag=A.imag+B.imag;
+    return temp;
+}
+void operator>>(istream B,Time A)
+{
+    hour:
+    cout<<"Enter Hours   :  ";
+    cin>>A.hours;
+    if(A.hours>24)
+    {
+        cout<<"Invalid hours!!";
+        goto hour;
+    }
+    minute:
+    cout<<"Enter Minutes :  ";
+    cin>>A.minutes;
+    if(A.minutes>60)
+    {
+        cout<<"Invalid minutes!!";
+        goto minute;
+    }
+    second:
+    cout<<"Enter Seconds :  ";
+    cin>>A.seconds;
+    if(A.seconds>60)
+    {
+        cout<<"Invalid seconds!!";
+        goto second;
+    }
+}
+void operator<<(ostream B,Time A)
+{
+    cout<<"Hours    : "<<A.hours<<endl;
+    cout<<"Minutes  : "<<A.minutes<<endl;
+    cout<<"Seconds  : "<<A.seconds<<endl;
+}
 int main()
 {
     cout<<endl<<"\e[1m1. Define a class Complex with appropriate instance variables and member functions."<<endl<<"Define following operators in the class: \
 \na. +"<<endl<<"b. -"<<endl<<"c. *"<<endl<<"d. ==\e[m";
-    assign27::Complex c1(3,4),c2(4,6),c3,c4,c5,c6(3,4);
+    Complex c1(3,4),c2(4,6),c3,c4,c5,c6(3,4);
     c3=c1+c2;
     c4=c1-c2;
     c5=c1*c2;
@@ -117,16 +113,27 @@ int main()
     c2.displaydec();
 
     cout<<endl<<endl<<"\e[1m3. Write a C++ program to add two complex numbers using operator overloaded by a friend function.\e[m";
-    // cout<<"The sum of two objects is "<<operator+(c6,c2);
-    // assign27::Complex2 c10(4,5);
-    // c10+c1;
+    Complex c10(4,5),c11;
+    c11=c6+c10;
+    c11.display();
 
     cout<<endl<<endl<<"\e[1m4. Write a C++ program using operator overloading for the following:"<<endl
 <<"1. == : To check whether two Times are the same or not."<<endl
 <<"2. >> : To accept the time."<<endl
 <<"3. << : To display the time.\e[m"<<endl;
-
-
+    Time t1,t2;
+    cout<<"Enter First Time"<<endl<<"-----------------------"<<endl;
+    cin>>t1;
+    cout<<"First Time";
+    cout<<t1;
+    cout<<"Enter Second Time"<<endl<<"-----------------------"<<endl;
+    cin>>t2;
+    cout<<"Second Time";
+    cout<<t2;
     cout<<endl;
     return 0;
 }
+
+
+
+
