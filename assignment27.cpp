@@ -80,9 +80,9 @@ void operator>>(istream B,Time A)
 }
 void operator<<(ostream B,Time A)
 {
-    cout<<"Hours    : "<<A.hours<<endl;
-    cout<<"Minutes  : "<<A.minutes<<endl;
-    cout<<"Seconds  : "<<A.seconds<<endl;
+    B<<"Hours    : "<<A.hours<<endl;
+    B<<"Minutes  : "<<A.minutes<<endl;
+    B<<"Seconds  : "<<A.seconds<<endl;
 }
 int main()
 {
