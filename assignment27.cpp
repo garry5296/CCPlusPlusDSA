@@ -21,8 +21,10 @@ using namespace std;
                     return false;
             }
             void display() { cout<<endl<<"Real is "<<real<<" & imag is "<<imag<<"."; }
-            void operator++() { real++; imag++; }
-            void operator--() { real--; imag--; }
+            void operator++() { ++real; ++imag; }
+            void operator++(int dummy) { real++; imag++; }
+            void operator--() { --real; --imag; }
+            void operator--(int dummy) { real--; imag--; }
             void displayinc() { cout<<endl<<"After incrementing the status is "<<real<<","<<imag; }
             void displaydec() { cout<<endl<<"After decrementing the status is "<<real<<","<<imag; }
             friend Complex operator+(Complex,Complex);
@@ -32,8 +34,8 @@ using namespace std;
         private:
             int hours,minutes,seconds;
         public:
-            friend void operator>>(istream,Time);
-            friend void operator<<(ostream,Time);
+            friend void operator>>(istream &B,Time A);
+            friend void operator<<(ostream &B,Time A);
             void operator==(Time A)
             {
                 if(hours==A.hours &&
@@ -80,9 +82,14 @@ using namespace std;
             CString operator+(CString A)
             {
                 CString temp;
-                temp=
+                temp=strcat(a,A.a);
+                return temp;
             }
-    }
+            void display()
+            {
+                cout<<a;
+            }
+    };
 // };
 Complex operator+(Complex A,Complex B)
 {
@@ -91,39 +98,39 @@ Complex operator+(Complex A,Complex B)
     temp.imag=A.imag+B.imag;
     return temp;
 }
-// void operator>>(istream B,Time A)
-// {
-//     hour:
-//     cout<<"Enter Hours   :  ";
-//     cin>>A.hours;
-//     if(A.hours>24)
-//     {
-//         cout<<"Invalid hours!!";
-//         goto hour;
-//     }
-//     minute:
-//     cout<<"Enter Minutes :  ";
-//     cin>>A.minutes;
-//     if(A.minutes>60)
-//     {
-//         cout<<"Invalid minutes!!";
-//         goto minute;
-//     }
-//     second:
-//     cout<<"Enter Seconds :  ";
-//     cin>>A.seconds;
-//     if(A.seconds>60)
-//     {
-//         cout<<"Invalid seconds!!";
-//         goto second;
-//     }
-// }
-// void operator<<(ostream B,Time A)
-// {
-//     B<<"Hours    : "<<A.hours<<endl;
-//     B<<"Minutes  : "<<A.minutes<<endl;
-//     B<<"Seconds  : "<<A.seconds<<endl;
-// }
+void operator>>(istream &B,Time A)
+{
+    hour:
+    cout<<"Enter Hours   :  ";
+    B>>A.hours;
+    if(A.hours>24)
+    {
+        cout<<"Invalid hours!!";
+        goto hour;
+    }
+    minute:
+    cout<<"Enter Minutes :  ";
+    B>>A.minutes;
+    if(A.minutes>60)
+    {
+        cout<<"Invalid minutes!!";
+        goto minute;
+    }
+    second:
+    cout<<"Enter Seconds :  ";
+    B>>A.seconds;
+    if(A.seconds>60)
+    {
+        cout<<"Invalid seconds!!";
+        goto second;
+    }
+}
+void operator<<(ostream &B,Time A)
+{
+    B<<"Hours    : "<<A.hours<<endl;
+    B<<"Minutes  : "<<A.minutes<<endl;
+    B<<"Seconds  : "<<A.seconds<<endl;
+}
 int main()
 {
     cout<<endl<<"\e[1m1. Define a class Complex with appropriate instance variables and member functions."<<endl<<"Define following operators in the class: \
@@ -146,9 +153,9 @@ int main()
 
     cout<<endl<<endl<<"\e[1m2. Write a C++ program to overload unary operators that is increment and decrement.\e[m";
     ++c1;
-    // c1++;
+    c1++;
     --c2;
-    // c2--;
+    c2--;
     c1.displayinc();
     c2.displaydec();
 
@@ -157,19 +164,19 @@ int main()
     c11=c6+c10;
     c11.display();
 
-//     cout<<endl<<endl<<"\e[1m4. Write a C++ program using operator overloading for the following:"<<endl
-// <<"1. == : To check whether two Times are the same or not."<<endl
-// <<"2. >> : To accept the time."<<endl
-// <<"3. << : To display the time.\e[m"<<endl;
-//     Time t1,t2;
-//     cout<<"Enter First Time"<<endl<<"-----------------------"<<endl;
-//     cin>>t1;
-//     cout<<"First Time";
-//     cout<<t1;
-//     cout<<"Enter Second Time"<<endl<<"-----------------------"<<endl;
-//     cin>>t2;
-//     cout<<"Second Time";
-//     cout<<t2;
+    cout<<endl<<endl<<"\e[1m4. Write a C++ program using operator overloading for the following:"<<endl
+<<"1. == : To check whether two Times are the same or not."<<endl
+<<"2. >> : To accept the time."<<endl
+<<"3. << : To display the time.\e[m"<<endl;
+    Time t1,t2;
+    cout<<"Enter First Time"<<endl<<"-----------------------"<<endl;
+    cin>>t1;
+    cout<<"First Time";
+    cout<<t1;
+    cout<<"Enter Second Time"<<endl<<"-----------------------"<<endl;
+    cin>>t2;
+    cout<<"Second Time";
+    cout<<t2;
 
     cout<<endl<<endl<<"\e[1m5. Overload the operator unary minus (-) to negate the numbers.\e[m";
     Numbers n1(-3,4,-6);
@@ -177,8 +184,9 @@ int main()
     n1.display();
 
     cout<<endl<<endl<<"\e[1m6. Create a class CString to represent a string.";
-    CString cs1;
-
+    CString cs1(" Gurpreet"),cs2(" Singh"),cs3;
+    cs3=cs1+cs2;
+    cs3.display();
 
     cout<<endl;
     return 0;
