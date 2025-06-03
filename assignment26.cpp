@@ -43,6 +43,13 @@ namespace assign26
             Cube(int a) { side=a; }
             void volume() { cout<<endl<<"Volume of the cube is "<<side*side*side; }
     };
+    class Counter
+    {
+        private:
+            static int count;
+        public:
+            Counter() {cout<<"Value of counter is "<<++count<<endl;}
+    };
     class Date
     {
         private:
@@ -112,6 +119,7 @@ namespace assign26
             }
     };
 };
+int assign26::Counter::count=0;
 int assign26::staticCount::a=0;
 int main()
 {
@@ -139,7 +147,9 @@ and"<<endl<<"b to store real and imaginary parts. Also define following member f
     assign26::Cube c1(4);
     c1.volume();
 
-    // cout<<endl<<endl<<"\e[1mQuestion4. Define a class Counter and Write a program to Show Counter using Constructor..\e[m";
+    cout<<endl<<endl<<"\e[1mQuestion4. Define a class Counter and Write a program to Show Counter using Constructor..\e[m";
+    assign28::Counter cc1,cc2,cc3;
+
     cout<<endl<<endl<<"\e[1mQuestion5. Define a class Date and write a program to Display Dateand initialise date object using Constructors..\e[m";
     assign26::Date d1(13,12,2024);
     d1.display();
