@@ -107,11 +107,41 @@ class Dollar{
         }
         void display() { cout<<"Dollar = "<<a<<endl; }
 };
-// class Time{
-//     private:
-//         int 
-// };
-
+class Minute{
+    private:
+        int minute;
+    public:
+        Minute() {minute=0;}
+        void setData(int x){minute=x;}
+        void display()
+        {
+            cout<<"Minutes = "<<minute<<endl;
+        }
+};
+class Time{
+    private:
+        int hours,minutes,seconds;
+    public:
+        Time(){}
+        Time(int a)
+        {
+            hours=a/3600;
+            a=a%3600;
+            minutes=a/60;
+            seconds=a%60;
+        }
+        Time(int x,int y) {hours=x;minutes=y;seconds=0;}
+        void display()
+        {
+            cout<<endl<<"Hours="<<hours<<" minutes="<<minutes<<" seconds="<<seconds<<endl;
+        }
+        operator Minute()
+        {
+            Minute temp;
+            temp.setData(minutes);
+            return temp;
+        }
+};
 Invent1::operator Invent2()
 {
     Invent2 temp;
@@ -170,23 +200,23 @@ int main()
     d2.display();
     cout<<endl<<tv;
 
-//     cout<<endl<<endl<<"6. Create a Time class and take Duration in seconds. Now you need to convert seconds(i.e in"
-// <<endl<<"int ) to Time class."<<endl;
-//     int duration;
-//     cout<<”Enter time duration in minutes”;
-//     cin>>duration;
-//     Time t1 = duration;
-//     t1.display();
+    cout<<endl<<endl<<"6. Create a Time class and take Duration in seconds. Now you need to convert seconds(i.e in"
+<<endl<<"int ) to Time class."<<endl;
+    int duration;
+    cout<<"Enter time duration in seconds";
+    cin>>duration;
+    Time t2 = duration;
+    t2.display();
 
-//     cout<<endl<<endl<<"7. Create two class Time and Minute and add required getter and setter including constructors."
-// <<endl<<"Now you need to type cast Time object into Minute to fetch the minute from Time and display it."
-//     Time t1(2,30);
-//     t1.display();
-//     Minute m1;
-//     m1.display();
-//     m1=t1;   // Fetch minute from time
-//     t1.display();
-//     m1.display();
+    cout<<endl<<endl<<"7. Create two class Time and Minute and add required getter and setter including constructors."
+<<endl<<"Now you need to type cast Time object into Minute to fetch the minute from Time and display it.";
+    Time t1(2,30);
+    t1.display();
+    Minute m1;
+    m1.display();
+    m1=t1;   // Fetch minute from time
+    t1.display();
+    m1.display();
 
     cout<<endl<<endl<<"8. Create a Rupee class and convert it into int. And Display it."<<endl;
     Rupee r1 = 10;
@@ -205,8 +235,7 @@ int main()
     Dollar d = r; // Rupee to Dollar conversion
     d.display();
     r.display();
-    r = d;
-    // Dollar to Rupee Conversion
+    r = d; // Dollar to Rupee Conversion
     d.display();
     r.display();
 
