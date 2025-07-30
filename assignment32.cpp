@@ -134,6 +134,23 @@ class Player
 
         }
 };
+class Eightt
+{
+    private:
+        int x;
+    public:
+        Eightt() {}
+        Eightt(int x) {this->x=x;}
+        Eightt(Eightt &E) {
+            int temp=1;
+            for(int i=E.x;i>0;--i)
+            {
+                temp*=i;
+            }
+            x=temp;
+        }
+        void display() { cout<<"Factorial is "<<x<<endl; }
+};
 ostream& operator<<(ostream &O,const FLOAT &F)
 {
     O<<F.a; return O;
@@ -174,7 +191,9 @@ int main()
 
     cout<<endl<<endl<<"7. C++ Program to illustrate the use of Constructors in single inheritance of your choice."<<endl;
 
-    // cout<<endl<<endl<<"8. Write a C++ program to find the factorial of a number using copy constructor"<<endl;
+    cout<<endl<<endl<<"8. Write a C++ program to find the factorial of a number using copy constructor"<<endl;
+    Eightt E1(5),E2(E1);
+    E2.display();
 
     cout<<endl<<endl<<"9. Write a C++ program to calculate the area of triangle, rectangle and circle using"
 <<"constructor overloading. The program should be menu driven."<<endl;
@@ -214,8 +233,8 @@ int main()
 <<"matches varies for each player. Write a parameterized constructor which initializes"
 <<"player no., name, number of matches and creates an array for number of goals and"
 <<"number of matches dynamically."<<endl;
-    Player P1(234,"Kohli",3);
-    P1.display();
+    // Player P1(234,"Kohli",3);
+    // P1.display();
 
     return 0;
 }
